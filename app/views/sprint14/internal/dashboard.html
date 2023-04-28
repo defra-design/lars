@@ -1,0 +1,371 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+ 
+<style>
+  .tobesent1 > a:focus {
+    outline: 3px solid transparent;
+    color: #FFF;
+    background-color: transparent !important;
+    box-shadow: 0 -2px transparent, 0 4px transparent !important;
+    text-decoration: none;
+  }
+  .tobesent {
+    text-decoration: none;
+  }
+  .tobesent1 > a:hover{
+    text-decoration: underline;
+  }
+</style>
+  <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main" style="padding-top:30px !important ;">
+          <div >
+            <div class="govuk-grid-column-two-from-desktop">
+              <div >
+                <a href="lars-home.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-heading-xl" style="margin-bottom: 0;">Dashboard for EES</h1>                      
+                    </legend> <br>     
+
+                  
+
+                    <div class="govuk-form-group">
+                      <h2 class="govuk-heading-l">Site permission request statuses
+                        <!-- <label class="govuk-label" style="margin-top: 10px;">
+                          <span>Total number of Site permission requests created for this survey: 268</span>
+                        </label> --> <br>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="timeperiod" style="margin-top: 10px;">
+                            View the permissions for your selected survey.
+                          </label>
+                          <select class="govuk-select" id="timeperiod" name="timeperiod" onchange="timeperiodChange()">
+                            <option value="28">River survey 2023 - AA1102</option>
+                            <option value="7">River survey 2023 - AA1103</option>                        
+                          </select>
+                        </div>
+
+                      </h2>
+                    </div>
+                   
+                    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                      <div class="govuk-notification-banner__header">
+                        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                          Important
+                        </h2>
+                      </div>
+                      <div class="govuk-notification-banner__content">
+                        <p>You have:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li><span id="permission-requests-that-are-yet-to-be-sent">56</span> permission requests that are yet to be sent</li>
+                          <li><span id="requested-permissions-that-have-not-responded">22</span> requested permissions that have not responded in 28 days</li> 
+                          <li><span id="granted-permissions-that-expire">14</span> granted permissions that expire in the next 10 days</li> 
+
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="govuk-form-group">
+
+                      <label class="govuk-label" style="margin-top: 10px;">
+                          <p class="govuk-body govuk-!-font-size-24">Total number of site permission requests created for this survey: <span id="total-number-of-site-permission-requests-created-for-this-survey" style="font-weight: bold">268</span></p>
+                        </label>
+                    <div  style="display: flex;">
+                      <div class="govuk-grid-column-one-half" style="background-color: #1d70b8;
+                      height: 100px;
+                      display: flex;
+                      align-items: center;margin: 0 15px 0 0px;">
+                        <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="dashboard-tobesent.html" style="color:#FFF;">To be sent</a></p>
+                        <p style="margin: 0;color:#FFF;width: 30%; text-align: right;font-weight: bold;
+                        font-size: 32px;" id="to-be-sent">56 <p style="color:#FFF;font-weight: regular; margin: 0;    padding-left: 10px;" id="to-be-sent-percent">(20.9%)</p></p>
+                      </div>
+                      <div class="govuk-grid-column-one-half" style="background-color: #f47738;
+                      height: 100px;
+                      display: flex;
+                      align-items: center;">
+                        <p style="margin: 0;color:#FFF;width: 70%;"  class="tobesent1"><a class="tobesent" href="dashboard-requested.html" style="color:#FFF;">Requested</a></p>
+                        <p style="margin: 0;color:#FFF;width: 30%; text-align: right;font-weight: bold;
+                        font-size: 32px;" id="requested">125 <p style="color:#FFF;font-weight: regular;margin: 0;    padding-left: 10px;" id="requested-percent">(46.6%)</p></p>
+                      </div>
+                      <div class="govuk-grid-column-one-half" style="background-color: #00703c;
+                      height: 100px;
+                      display: flex;
+                      align-items: center;margin-left: 15px;">
+                        <p style="margin: 0;color:#FFF;width: 70%;"  class="tobesent1"><a class="tobesent" href="dashboard-granted.html" style="color:#FFF;">Granted</a></p>
+                        <p style="margin: 0;color:#FFF;width: 30%; text-align: right;font-weight: bold;
+                        font-size: 32px;" id="granted">64 <p style="color:#FFF;text-align: inherit ;font-weight: regular;margin: 0;    padding-left: 10px;" id="granted-percent">(23.9%)</p></p>
+                      </div>
+                    </div>
+
+                    <div  style="display: flex;margin-top: 30px;">
+                      <div class="govuk-grid-column-one-half" style="background-color: #4c2c92;
+                      height: 100px;
+                      display: flex;
+                      align-items: center;margin: 0 15px 0 0px;">
+                        <p style="margin: 0;color:#FFF;width: 70%;" class="tobesent1"><a class="tobesent" href="Javascript:;" style="color:#FFF;">Presumed granted</a></p>
+                        <p style="margin: 0;color:#FFF;width: 30%; text-align: right;font-weight: bold;
+                        font-size: 32px;" id="presumed-granted">0</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half" style="background-color: #d4351c;
+                      height: 100px;
+                      display: flex;
+                      align-items: center;">
+                        <p style="margin: 0;color:#FFF;width: 70%;" class="tobesent1"><a class="tobesent" href="dashboard-denied.html" style="color:#FFF;">Denied</a></p>
+                        <p style="margin: 0;color:#FFF;width: 30%; text-align: right;font-weight: bold;
+                        font-size: 32px;" id="denied">5 <p style="color:#FFF;font-weight: regular;margin: 0;    padding-left: 10px;" id="denied-percent">(1.9%)</p></p> 
+                      </div>
+                      <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                      height: 100px;
+                      display: flex;
+                      align-items: center;margin-left: 15px;">
+                        <p style="margin: 0;color:#FFF;width: 70%;" class="tobesent1"><a class="tobesent" href="dashboard-expired.html" style="color:#FFF;">Expired</a></p>
+                        <p style="margin: 0;color:#FFF;width: 30%; text-align: right;font-weight: bold;
+                        font-size: 32px;" id="expired">18 <p style="color:#FFF;font-weight: regular;margin: 0;    padding-left: 10px;" id="expired-percent">(6.7%)</p></p>
+                      </div>
+                    </div>
+                     <!-- <label class="govuk-label" style="margin-top: 10px;">
+                          <span>Total site permission request created: 250</span>
+                        </label> -->
+                  </div>
+                    <div class="govuk-summary-list__row" style="display: flex;margin-top: 80px;margin-bottom: 30px;"></div>
+                    <div class="govuk-form-group">
+                      <h2 class="govuk-heading-l" style="font-size: 1.75rem;">Site permission requests sent
+                        <label class="govuk-label" style="margin-top: 10px;">
+                          <span>A summary of the number site permission requests sent by post or email.</span>
+                        </label>
+                        <label class="govuk-label" style="margin-top: 10px;">
+                          <b>Total site permission sent: <span id="total-site-permission-sent">194</span></b>
+                        </label>
+                      </h2>
+                      
+                    </div>
+                    <div class="govuk-form-group">
+                      <div style="display: flex;">
+                        <b class="govuk-label" style="width: 50%;font-weight: bold;display: flex;">Posted: <span id="total-site-permission-sent-letter">102</span></b>
+                        <b class="govuk-label" style="width: 50%; text-align: right; font-weight: bold;display: flex;justify-content: flex-end;">Email sent: <span id="total-site-permission-sent-email">92</span></b>
+                      </div>
+                      <div style="border: 1px solid #000;">
+                        <div id="probar" style="height:35px;width:50%;color: #fff;
+                        background-color: #000;"></div>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="govuk-form-group">
+                    <h2 class="govuk-heading-l" style="font-size: 1.75rem;">Permission request responses
+                      <label class="govuk-label" style="margin-top: 10px;">
+                        <span>The number of replies we've received by post, email or phone. Also includes <br>requests that have had no response.</span>
+                      </label>
+                    </h2>
+                  </div>
+
+                  <div  style="display: flex;">
+                    <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;margin: 0 15px 0 0px;">
+                      <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="javascript:;" style="color:#000;">Post</a></p>
+                      <p style="margin: 0;width: 30%; text-align: right;font-weight: bold;
+                      font-size: 1.3875rem;" id="permission-request-responses-letter">76</p>
+                    </div>
+                    <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;">
+                      <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="javascript:;" style="color:#000;">Email</a></p>
+                      <p style="margin: 0;width: 30%; text-align: right;font-weight: bold;
+                      font-size: 1.3875rem;"  id="permission-request-responses-email">32</p>
+                    </div>
+                    <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;margin-left: 15px;">
+                      <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="javascript:;" style="color:#000;">Phone</a></p>
+                      <p style="margin: 0;width: 30%; text-align: right;font-weight: bold;
+                      font-size: 1.3875rem;" id="permission-request-responses-phone">18</p>
+                    </div>
+                    <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;margin-left: 15px;">
+                      <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="dashboard-noresponse.html" style="color:#000;">No response</a></p>
+                      <p style="margin: 0;width: 30%; text-align: right;font-weight: bold;
+                      font-size: 1.3875rem;" id="permission-request-responses-noresponse">68</p>
+                    </div>
+                  </div>
+<!--
+                  <div class="govuk-summary-list__row" style="display: flex;margin-top: 60px;margin-bottom: 30px;"></div>
+
+                  <div class="govuk-form-group">
+                    <h2 class="govuk-heading-l" style="font-size: 1.75rem;">Thank you letters
+                      <label class="govuk-label" style="margin-top: 10px;">
+                        <span>The number of follow up thank you communications sent by email, letter or yet to be sent.</span>
+                      </label>
+                      <label class="govuk-label" style="margin-top: 10px;">
+                        <b>Total granted site visit permission: <span id="total-granted-site-visit-permission">64</span></b>
+                      </label>
+                    </h2>
+                    
+                  </div>
+
+                  <div  style="display: flex;">
+                    <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;margin: 0 15px 0 0px;">
+                      <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="javascript:;" style="color:#000;">Letter</a></p>
+                      <p style="margin: 0;width: 30%; text-align: right;font-weight: bold;
+                      font-size: 1.3875rem;" id="total-granted-site-visit-permission-letter">52</p>
+                    </div>
+                    <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;">
+                      <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="javascript:;" style="color:#000;">Email</a></p>
+                      <p style="margin: 0;width: 30%; text-align: right;font-weight: bold;
+                      font-size: 1.3875rem;" id="total-granted-site-visit-permission-email">10</p>
+                    </div>
+                    <div class="govuk-grid-column-one-half" style="background-color: #b1b4b6;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;margin-left: 15px;">
+                      <p style="margin: 0;width: 70%;" class="tobesent1"><a class="tobesent" href="javascript:;" style="color:#000;">Not sent</a></p>
+                      <p style="margin: 0;width: 30%; text-align: right;font-weight: bold;
+                      font-size: 1.3875rem;" id="total-granted-site-visit-permission-notsent">2</p>
+                    </div>
+                  </div>
+                -->
+
+                  <div class="govuk-summary-list__row" style="display: flex;margin-top: 60px;margin-bottom: 30px;"></div>
+
+                  <div class="govuk-form-group">
+                    <h2 class="govuk-heading-l" style="font-size: 1.75rem;">LARs report
+                      <label class="govuk-label" style="margin-top: 10px;">
+                        <p class="govuk-body">You can download the following reports: </p>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li><a href="#">Land parcel details with associated contacts</a></li> 
+                        </ul>
+                      </label>
+                      
+                    </h2>
+                    
+                  </div>
+
+                    
+
+                    
+                      
+                      
+                    </div>
+                  </fieldset>
+                </div>
+              
+                
+            </div>
+          </div>
+        </main>
+      </div>
+  <script>
+    function timeperiodChange() {
+      let timeperiod = document.getElementById('timeperiod').value;
+      if(timeperiod == 7) {
+
+        //Choose option 2 value
+        
+        document.getElementById('to-be-sent').innerHTML = 198;
+        document.getElementById('requested').innerHTML = 346;
+        document.getElementById('granted').innerHTML = 55;
+        document.getElementById('presumed-granted').innerHTML = 0;
+        document.getElementById('denied').innerHTML = 16;
+        document.getElementById('expired').innerHTML = 59;
+
+        document.getElementById('to-be-sent-percent').innerHTML = '(29.3%)';
+        document.getElementById('requested-percent').innerHTML = '(51.4%)';
+        document.getElementById('granted-percent').innerHTML = '(8.2%)';
+       // document.getElementById('presumed-granted-percent').innerHTML = 0;
+        document.getElementById('denied-percent').innerHTML = '(2.4%)';
+        document.getElementById('expired-percent').innerHTML = '(8.8%)';
+
+        document.getElementById('permission-request-responses-letter').innerHTML = 65;
+        document.getElementById('permission-request-responses-email').innerHTML = 54;
+        document.getElementById('permission-request-responses-phone').innerHTML = 78;
+        document.getElementById('permission-request-responses-noresponse').innerHTML = 99;
+        document.getElementById('total-site-permission-sent-letter').innerHTML = 800;
+        document.getElementById('total-site-permission-sent-email').innerHTML = 130;
+
+        //document.getElementById('total-granted-site-visit-permission-letter').innerHTML = 15;
+        //document.getElementById('total-granted-site-visit-permission-email').innerHTML = 2;
+       //document.getElementById('total-granted-site-visit-permission-notsent').innerHTML = 3;
+
+        document.getElementById('total-site-permission-sent').innerHTML = 930;
+
+       // document.getElementById('total-granted-site-visit-permission').innerHTML = 20;
+
+        document.getElementById('permission-requests-that-are-yet-to-be-sent').innerHTML = 200;
+        document.getElementById('requested-permissions-that-have-not-responded').innerHTML = 56;
+        document.getElementById('granted-permissions-that-expire').innerHTML = 32;
+
+        document.getElementById('total-number-of-site-permission-requests-created-for-this-survey').innerHTML = 674;
+        
+        document.getElementById("probar").style.cssText = `
+        height:35px;
+        width:80%;
+        color: #fff;
+        background-color: #000;
+`;
+      } else {
+
+        //Choose option 1 value
+
+        document.getElementById('to-be-sent').innerHTML = 56;
+        document.getElementById('requested').innerHTML = 125;
+        document.getElementById('granted').innerHTML = 64;
+        document.getElementById('presumed-granted').innerHTML = 0;
+        document.getElementById('denied').innerHTML = 5;
+        document.getElementById('expired').innerHTML = 18;
+
+        document.getElementById('to-be-sent-percent').innerHTML = '(20.9%)';
+        document.getElementById('requested-percent').innerHTML = '(46.6%)';
+        document.getElementById('granted-percent').innerHTML = '(23.9%)';
+       // document.getElementById('presumed-granted-percent').innerHTML = 0;
+        document.getElementById('denied-percent').innerHTML = '(1.9%)';
+        document.getElementById('expired-percent').innerHTML = '(6.7%)';
+
+        document.getElementById('permission-request-responses-letter').innerHTML = 76;
+        document.getElementById('permission-request-responses-email').innerHTML = 32;
+        document.getElementById('permission-request-responses-phone').innerHTML = 18;
+        document.getElementById('permission-request-responses-noresponse').innerHTML = 68;
+        document.getElementById('total-site-permission-sent-letter').innerHTML = 102;
+        document.getElementById('total-site-permission-sent-email').innerHTML = 92;
+
+       // document.getElementById('total-granted-site-visit-permission-letter').innerHTML = 52;
+       // document.getElementById('total-granted-site-visit-permission-email').innerHTML = 10;
+      // document.getElementById('total-granted-site-visit-permission-notsent').innerHTML = 2;
+
+        document.getElementById('total-site-permission-sent').innerHTML = 930;
+
+        //document.getElementById('total-granted-site-visit-permission').innerHTML = 64;
+
+        document.getElementById('permission-requests-that-are-yet-to-be-sent').innerHTML = 56;
+        document.getElementById('requested-permissions-that-have-not-responded').innerHTML = 22;
+        document.getElementById('granted-permissions-that-expire').innerHTML = 14;
+
+        document.getElementById('total-number-of-site-permission-requests-created-for-this-survey').innerHTML = 268;
+
+        document.getElementById("probar").style.cssText = `
+        height:35px;
+        width:50%;
+        color: #fff;
+        background-color: #000;
+`;
+      }
+    }
+  </script>
+
+{% endblock %}

@@ -1,0 +1,305 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="edit-template.html" class="govuk-back-link">Back</a>
+            
+                <h1 class="govuk-heading-l">Check your request details and the letter created
+                </h1>
+                <!--
+                <h1 class="govuk-heading-l">Confirm the <span id="c-landowner">landowner</span> details for land parcel ST1234567
+              </h1>
+                -->
+              <h2 class="govuk-heading-m"></h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+               
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Contact type
+                  </dt>
+                  <dd class="govuk-summary-list__value" id="c-individual">
+                    Landowner
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <span id="c-lname">Landowner</span> name
+                  </dt>
+                  <dd class="govuk-summary-list__value" >
+                   <span id="c-name"> Sarah Philips</span> 
+                   <strong class="govuk-tag" id="primary1" style="font-size: 12px;">
+                    primary contact
+                  </strong>
+                  </dd> 
+                  <strong style="font-size: 12px;">
+                    
+                  </strong>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd> 
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" id="addressoremail">
+                    Address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                   <span id="address">72 Guild Street<br>London<br>SE23 6FH</span>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    
+                  
+                    
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                  </dd>
+                </div>
+            
+                
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Letter
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="c-emailaddress">LARS-initial introduction-1</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+                
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Survey ID
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="c-emailaddress">River survey 2023 - AA1102</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+
+
+              </dl>
+             
+          
+
+
+              <a  href="view-spr.html"  class="govuk-button" data-module="govuk-button">
+                Save and finish</a>
+                
+                
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+<script>
+  // let contacttype = localStorage.getItem('contacttype');
+  // if(contacttype == 'Conatactdetails1') {
+  //   document.getElementById('c-individual').innerHTML = 'Land manager';
+  //   document.getElementById('c-lname').innerHTML = 'Land manager';
+  //   document.getElementById('c-name').innerHTML = 'Joyce Meyer';
+  //   document.getElementById('primary1').innerHTML = 'primary contact';
+  //   document.getElementById("primary1").classList.remove("govuk-tag--yellow");
+  //   if(localStorage.getItem('Addresstype') == 'Addressdetails1') {
+  //     document.getElementById('address').innerHTML  = '241 City Road<br>London<br>EC1V 1JQ';
+  //     document.getElementById('addressoremail').innerHTML = 'Address';
+  //   } else {
+  //     document.getElementById('address').innerHTML = localStorage.getItem('landmanageremailaddress');
+  //     document.getElementById('addressoremail').innerHTML = 'Email';
+  //   }
+    
+  //   } else if(contacttype == 'Conatactdetails2') {
+  //     document.getElementById('c-individual').innerHTML = 'Landowner';
+  //     document.getElementById('c-lname').innerHTML = 'Landowner';
+  //     document.getElementById('c-name').innerHTML = 'Camila Anderson';
+  //     document.getElementById('primary1').innerHTML = 'SECONDARY CONTACT';
+  //     if(localStorage.getItem('Addresstype') == 'Addressdetails1') {
+  //     document.getElementById('address').innerHTML  = '12 George Street<br>London<br>W2 6FH';
+  //     document.getElementById('addressoremail').innerHTML = 'Address';
+  //   } else {
+  //     document.getElementById('address').innerHTML = localStorage.getItem('landowneremailaddress');
+  //     document.getElementById('addressoremail').innerHTML = 'Email';
+  //   }
+  //   }
+
+
+
+
+
+  //contact details page 1
+  // let optionslandowner = localStorage.getItem('asscontactname');
+  // let fullname = localStorage.getItem('fullname');
+  // let landlinenumber = localStorage.getItem('landlinenumber');
+  // let mobilenumber = localStorage.getItem('mobilenumber');
+  // let emailaddress = localStorage.getItem('emailaddress');
+  // let notes = localStorage.getItem('notes');
+  // let companyname = localStorage.getItem('companyname');
+
+  // //Contact details page 2
+  // let optionslandowner1 = localStorage.getItem('asscontactname1');
+  // let fullname1 = localStorage.getItem('fullname1');
+  // let landlinenumber1 = localStorage.getItem('landlinenumber1');
+  // let mobilenumber1 = localStorage.getItem('mobilenumber1');
+  // let emailaddress1 = localStorage.getItem('emailaddress1');
+  // let notes1 = localStorage.getItem('notes1');
+  // let companyname1 = localStorage.getItem('companyname1');
+
+  
+  // if(optionslandowner) {
+  //   document.getElementById('c-individual').innerHTML = optionslandowner;
+  //   document.getElementById('c-lname').innerHTML = optionslandowner;
+  // } 
+
+  // if(optionslandowner1) {
+  //   document.getElementById('c-individual1').innerHTML = optionslandowner1;
+  //   document.getElementById('c-lname1').innerHTML = optionslandowner1;
+  // }
+
+  // if(fullname) {
+  //   document.getElementById('c-name').innerHTML = fullname;
+  // } else {
+  //   document.getElementById('c-name').innerHTML = '';
+  // }
+
+  // if(landlinenumber) {
+  //   document.getElementById('c-landline').innerHTML = landlinenumber;
+  // } else {
+  //   document.getElementById('c-landline').innerHTML = 'None';
+  // }
+  // if(mobilenumber) {
+  //   document.getElementById('c-mobile').innerHTML = mobilenumber;
+  // } else {
+  //   document.getElementById('c-mobile').innerHTML = 'None';
+  // }
+  // if(emailaddress) {
+  //   document.getElementById('c-emailaddress').innerHTML = emailaddress;
+  // } else {
+  //   document.getElementById('c-emailaddress').innerHTML = 'None';
+  // }
+  // if(notes) {
+  //   document.getElementById('c-notes').innerHTML = notes;
+  // } else {
+  //   document.getElementById('c-notes').innerHTML = 'None';
+  // }
+  // if(companyname) {
+  //   document.getElementById('c-companyname').innerHTML = companyname;
+  // } else {
+  //   document.getElementById('c-companyname').innerHTML = 'None';
+  // }
+
+  // if(fullname1) {
+  //   document.getElementById('c-name1').innerHTML = fullname1;
+  // } else {
+  //   document.getElementById('c-name1').innerHTML = '';
+  // }
+
+  // if(landlinenumber1) {
+  //   document.getElementById('c-landline1').innerHTML = landlinenumber1;
+  // } else {
+  //   document.getElementById('c-landline1').innerHTML = 'None';
+  // }
+  // if(mobilenumber1) {
+  //   document.getElementById('c-mobile1').innerHTML = mobilenumber1;
+  // } else {
+  //   document.getElementById('c-mobile1').innerHTML = 'None';
+  // }
+  // if(emailaddress1) {
+  //   document.getElementById('c-emailaddress1').innerHTML = emailaddress1;
+  // } else {
+  //   document.getElementById('c-emailaddress').innerHTML = 'None';
+  // }
+  // if(notes1) {
+  //   document.getElementById('c-notes1').innerHTML = notes1;
+  // } else {
+  //   document.getElementById('c-notes1').innerHTML = 'None';
+  // }
+  // if(companyname1) {
+  //   document.getElementById('c-companyname1').innerHTML = companyname1;
+  // } else {
+  //   document.getElementById('c-companyname1').innerHTML = 'None';
+  // }
+
+  // if(localStorage.getItem('primarycontactbox') == 'true') {
+  //   document.getElementById("primary1").classList.remove("govuk-tag--grey");
+  //   document.getElementById('primary1').innerHTML = 'PRIMARY CONTACT';
+  // } else {
+  //   document.getElementById('primary1').innerHTML = 'SECONDARY CONTACT';
+  // }
+
+  // if(localStorage.getItem('primarycontactbox1') == 'true') {
+  //   document.getElementById("primary2").classList.remove("govuk-tag--grey");
+  //   document.getElementById('primary2').innerHTML = 'PRIMARY CONTACT';
+  // } else {
+  //   document.getElementById('primary2').innerHTML = 'SECONDARY CONTACT';
+  // }
+
+  // if(localStorage.getItem('contact1landlinetype1') == 'Primary') {  
+  //   document.getElementById("c1landlineprimary").classList.remove("govuk-tag--green");
+  //   document.getElementById('c1landlineprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+  // } else {
+  //   document.getElementById('c1landlineprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+  // }
+
+  // if(localStorage.getItem('contact1mobiletype1') == 'Primary') {  
+  //   document.getElementById("c1mobileprimary").classList.remove("govuk-tag--green");
+  //   document.getElementById('c1mobileprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+  // } else {
+  //   document.getElementById('c1mobileprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+  // }
+
+  // if(localStorage.getItem('contact2landlinetype1') == 'Primary') {  
+  //   document.getElementById("c2landlineprimary").classList.remove("govuk-tag--green");
+  //   document.getElementById('c2landlineprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+  // } else {
+  //   document.getElementById('c2landlineprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+  // }
+
+  // if(localStorage.getItem('contact2mobiletype1') == 'Primary') {  
+  //   document.getElementById("c2mobileprimary").classList.remove("govuk-tag--green");
+  //   document.getElementById('c2mobileprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+  // } else {
+  //   document.getElementById('c2mobileprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+  // }
+</script>
+{% endblock %}

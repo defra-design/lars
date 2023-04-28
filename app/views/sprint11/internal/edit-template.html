@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="select-communication-type.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Edit the letter template 
+                      </h1>
+                    </legend> <br>
+                    
+                    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+                      <div class="govuk-form-group">
+                        <!-- <label class="govuk-label" for="notes">
+                          Label name
+                        </label> -->
+                        <textarea class="govuk-textarea govuk-js-character-count" id="notes" name="notes" rows="20" aria-describedby="with-hint-info with-hint-hint">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna enim, faucibus sit amet lobortis sit amet, rutrum interdum leo. Quisque in tristique arcu. Etiam id pulvinar enim. Suspendisse eu maximus nulla. Donec sed hendrerit lacus. Morbi quis vestibulum tortor. Praesent a felis a est efficitur pulvinar. Donec ac placerat tellus. Suspendisse accumsan, nulla a sagittis sodales, tortor odio facilisis felis, sed volutpat augue tellus nec velit. Ut eget facilisis risus.
+                          
+                          Vestibulum porttitor est augue, mattis cursus turpis finibus vel. Nullam vehicula in elit eget gravida. Pellentesque et purus quis est varius suscipit. Ut accumsan eu nulla id aliquam. Nullam euismod, massa et sollicitudin lobortis, odio quam fermentum lacus, at convallis risus enim ac magna. Cras imperdiet lectus ut elit lacinia, vel aliquet est tincidunt. Donec sodales in nulla quis tempor. Nullam finibus nulla vitae elementum varius. Vivamus in rhoncus massa, quis vehicula lorem. Praesent at risus molestie, ullamcorper ex eu, lobortis lorem. Cras a turpis libero.
+                          
+                          Maecenas tortor nisi, elementum in euismod vel, condimentum non sem. Nunc mattis pellentesque velit, sagittis suscipit magna bibendum et. Curabitur posuere, augue ut sagittis malesuada, ex turpis posuere ligula, id blandit lectus enim non ante. Cras tincidunt fermentum fringilla. Maecenas in mattis justo, vel cursus nunc. Vivamus in vehicula urna. Morbi sed tellus tincidunt, aliquet velit non, varius ipsum.
+                          
+                          Etiam elementum vulputate viverra. Nulla fringilla elit finibus ex placerat, ut mattis magna rutrum. Phasellus et imperdiet eros, a commodo urna. Vestibulum sodales lacinia pharetra. Sed mollis commodo eleifend. Sed pulvinar auctor tortor in auctor. Quisque vel nunc nisi. In eu velit leo. Nulla id commodo leo. Sed tempus lectus neque, a elementum turpis auctor quis. Aliquam eu venenatis mi. Quisque in sodales erat.
+                          
+                          Morbi luctus varius ex et consequat. Aenean eu diam non dui suscipit pellentesque. Vestibulum porta, ex ac molestie feugiat, lectus metus mattis sapien, eget iaculis nisl ipsum et dui. Donec iaculis velit a odio dapibus interdum in efficitur velit. Suspendisse auctor diam ut enim consequat finibus. Cras eu ullamcorper justo. Vivamus aliquam eleifend magna, vitae feugiat leo tincidunt nec. In sit amet tellus sem. Aliquam elit dolor, laoreet ac sapien vitae, placerat sagittis purus. Etiam ut libero leo. Ut ut arcu eu diam laoreet venenatis vitae ut dui. Integer ipsum tortor, mattis non odio sed, efficitur cursus eros. Suspendisse potenti. Duis ut fermentum neque, ut euismod ipsum.</textarea>
+                      </div>
+                      <!-- <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                        You can enter up to 200 characters
+                      </div> -->
+                      <br>
+                      <p class="govuk-body"><a href="#" class="govuk-!-font-size-19 govuk-link">Preview the letter</a></p>
+
+                    </div>
+                  </fieldset>
+                </div>
+                <a  href="#"  class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  
+
+{% endblock %}

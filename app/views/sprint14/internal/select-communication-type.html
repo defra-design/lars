@@ -1,0 +1,116 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="select-contact-type.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Choose your template and how you want to send it
+                      </h1>
+                    </legend> <br>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="l1">
+                        Choose your template
+
+                      </label>
+                      <select class="govuk-select" id="l1" name="l1">
+                          <option value=""></option>
+                          <option value="Primary">LARS-initial introduction-1</option>
+                          <option value="Secondary">LARS-initial introduction-2</option>    
+                        </select>     
+                    </div>
+                    
+                    <br>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="c1" name="where-do-you-live" type="radio" value="Addressdetails1">
+                        <label class="govuk-label govuk-radios__label" for="c1">
+                          <span class="govuk-!-font-weight-bold">Address</span><br>
+                          
+                          <span id="landmanager">72 Guild Street<br>London<br>SE23 6FH</span>
+                         
+                          
+                        </label>
+                      </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="c2"  name="where-do-you-live" type="radio" value="Addressdetails2">
+
+                        <label class="govuk-label govuk-radios__label" for="c2">
+                          <span class="govuk-!-font-weight-bold">Email</span><br>
+
+                          <span id="email">	
+                            sarah.phillips@example.com</span>
+                        </label>
+                      </div>
+                      
+                      
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="edit-template.html"  class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  <!-- <script>
+    let contenttype = localStorage.getItem('contacttype');
+    if(contenttype == 'Conatactdetails1') {
+      document.getElementById('landmanager').innerHTML = '241 City Road<br>London<br>EC1V 1JQ';
+      let emailaddress = localStorage.getItem('landmanageremailaddress');
+      if(emailaddress) {
+        document.getElementById('email').innerHTML = emailaddress;
+      } else {
+        document.getElementById('email').innerHTML = 'None';
+      }
+    } else if(contenttype == 'Conatactdetails2') {
+      document.getElementById('landmanager').innerHTML = '12 George Street<br>London<br>W2 6FH';	
+      let emailaddress1 = localStorage.getItem('landowneremailaddress');
+      if(emailaddress1) {
+        document.getElementById('email').innerHTML = emailaddress1;
+      } else {
+        document.getElementById('email').innerHTML = 'None';
+      }
+    }
+
+
+   
+
+
+    let optionslandowner = localStorage.getItem('Addresstype');
+    
+    
+    if(optionslandowner == 'Addressdetails1') {
+      document.getElementById('c1').checked = true;
+    } else if(optionslandowner == 'Addressdetails2') {
+      document.getElementById('c2').checked = true;
+    }
+    
+    function optionsLandowner() {
+      let landownername =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      localStorage.setItem("Addresstype", landownername);
+     
+    }
+  </script> -->
+
+{% endblock %}

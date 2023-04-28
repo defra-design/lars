@@ -1,0 +1,226 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="landowner-details.html" class="govuk-back-link">Back</a>
+
+                <div style="display: none;" id="confirmmessage" class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    This email has been successfully updated
+                  </h1>
+                  <!--
+                  <div class="govuk-panel__body">
+                    Your reference number<br><strong>HDJ2123F</strong>
+                  </div> -->
+                </div>
+
+              <h1 class="govuk-heading-l">Edit contact details</h1>
+              <h2 class="govuk-heading-m">Contact details</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Contact type	
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Individual	
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd>
+                </div>
+                
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Landowner name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Sarah Philips <br><strong class="govuk-tag">
+                      PRIMARY CONTACT	
+                    </strong>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    72 Guild Street<br>London<br>SE23 6FH
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Landline
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19">02020 894852</p> <strong class="govuk-tag govuk-tag--yellow">
+                      SECONDARY CONTACT NUMBER	
+                    </strong><br>
+                    <a href="#" class="govuk-link govuk-link">Add more</a>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Mobile
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19">07700 900457</p> <strong class="govuk-tag govuk-tag--yellow">
+                      Primary CONTACT NUMBER	
+                    </strong><br>
+                    <a href="#" class="govuk-link govuk-link">Add more</a>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Email address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="emailaddress">None</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="email-address.html">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Notes
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19">None</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+
+              </dl>
+              <!--
+              <h2 class="govuk-heading-m">Application details</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Previous application number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    502135326
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> previous application number</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Licence type
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    For personal use
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> licence type</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Home address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    72 Guild Street<br>London<br>SE23 6FH
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> home address</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Licence period
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Valid for 6 months
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> licence period</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+              -->
+              <!-- <form action="/form-handler" method="post" novalidate>
+                <input type="hidden" name="answers-checked" value="true"> -->
+                <p class="govuk-body govuk-!-font-size-19">Back to <a href="#" class="govuk-link" onclick="personalDetails()">landowner details</a></p>
+
+                <!--
+                <button class="govuk-button" data-module="govuk-button" onclick="personalDetails()">
+                  Save and continue
+                </button> -->
+              <!-- </form> -->
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+<script>
+  let emailid = localStorage.getItem("landowneremail");
+  if(emailid != 'test' && emailid) {
+    document.getElementById('emailaddress').innerHTML = emailid;
+    
+  } else {
+    document.getElementById('emailaddress').innerHTML = 'None';
+  }
+  if(localStorage.getItem('landowneremailbanner')) {
+    document.getElementById('confirmmessage').style.display = 'block';
+  }
+  function personalDetails() {
+    localStorage.removeItem('landowneremailbanner');
+    window.location.href = "/sprint11/internal/landowner-details"
+  }
+</script>
+{% endblock %}

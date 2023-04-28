@@ -1,0 +1,89 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div>
+                <a href="add-landowner1.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Would you like to add another contact for the land parcel ST1234567?
+                      </h1>
+                      <span class="govuk-caption-l">For example, a landowner, tenant, land manager or agent</span>
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="yes" onclick="newcontact()" name="where-do-you-live" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="yes">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="no" onclick="newcontact()" name="where-do-you-live" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for="no">
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="javascript:;" onclick="contactLandparcel()"   class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  <script>
+     let c = localStorage.getItem('newcontact3');
+     if(c == 'yes') {
+      document.getElementById('yes').checked = true;
+     } else if(c == 'no'){
+      document.getElementById('no').checked = true;
+     } else {
+      document.getElementById('yes').checked = false;
+      document.getElementById('no').checked = false;
+     }
+    // if(optionslandowner == 'Individual') {
+    //   document.getElementById('individual').checked = true;
+    // } else if(optionslandowner == 'Business'){
+    //   document.getElementById('business').checked = true;
+    // } else if(optionslandowner == 'Associated contact') {
+    //   document.getElementById('associatedcontact').checked = true;
+    // } else {
+    //   document.getElementById('individual').checked = false;
+    //   document.getElementById('business').checked = false;
+    //   document.getElementById('associatedcontact').checked = false;
+    // }
+    
+    function newcontact() {
+      let newcontact =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      localStorage.setItem("newcontact3", newcontact);
+    }
+    function contactLandparcel() {
+      let newcontact =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      if(newcontact == 'no') {
+        window.location.href = "/sprint19/internal/new-landowner-details";
+      } else {
+        window.location.href = "/sprint19/internal/options-landowner2";
+      }
+    }
+  </script>
+
+{% endblock %}

@@ -1,0 +1,285 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div>
+                <a href="parcel-details21#primary" class="govuk-back-link">Back</a>
+
+                <div style="display: none;background-color: #00703c;" id="confirmmessage" class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    This email has been successfully updated
+                  </h1>
+                  <!--
+                  <div class="govuk-panel__body">
+                    Your reference number<br><strong>HDJ2123F</strong>
+                  </div> -->
+                </div>
+
+              <h1 class="govuk-heading-l">Confirm the contact details</h1>
+              <h2 class="govuk-heading-m">Contact details</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Contact type	
+                  </dt>
+                  <dd class="govuk-summary-list__value" id="primarylandowner">
+                    Landowner	
+                  </dd>
+                  <dd class="govuk-summary-list__actions" style="width: 25%">
+                    <a class="govuk-link" href="#">
+                      Edit this contact<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd>
+                </div>
+                
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Landowner name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <span id="primaryname">Sarah Philips</span> <br>
+                    <strong class="govuk-tag" id="primaryconatct" style="display: none;">
+                      PRIMARY CONTACT	
+                    </strong>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden">name</span>
+                    </a> -->
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row" id="companyfullname" style="display: none;">
+                  <dt class="govuk-summary-list__key">
+                    Company full name	
+                  </dt>
+                  <dd class="govuk-summary-list__value" id="primarycompanyname">
+                    Landowner	
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden">name</span>
+                    </a> -->
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row" id="postcode" style="display: none;">
+                  <dt class="govuk-summary-list__key">
+                    Postcode	
+                  </dt>
+                  <dd class="govuk-summary-list__value" id="primarypostcode">
+                    Landowner	
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden">name</span>
+                    </a> -->
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    72 Guild Street<br>London<br>SE23 6FH
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> address</span>
+                    </a> -->
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Phone number 1
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="primarynumber1">02020 894852</p> <strong id="psnfirst">
+                      SECONDARY CONTACT NUMBER	
+                    </strong><br>
+                    <a href="#" class="govuk-link govuk-link">Add more</a>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a> -->
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Phone number 2
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="primarynumber2">07700 900457</p> <strong id="psnsecond">
+                      Primary CONTACT NUMBER	
+                    </strong><br>
+                    <a href="#" class="govuk-link govuk-link">Add more</a>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a> -->
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Email address
+                  </dt> 
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="primaryemail">	
+                      sarah.phillips@example.com</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="javascript:;" >
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a> -->
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Notes
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="primarynotes">	
+                      Do not contact landowner by phone</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                    </a> -->
+                  </dd>
+                </div>
+
+              </dl>
+             
+           
+                
+                <button class="govuk-button" data-module="govuk-button" onclick="personalDetails()">
+                  Save and continue
+                </button>
+             
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+<script>
+function personalDetails() {
+  window.location.href = "/sprint19/internal/parcel-details21?status=success1"
+}
+  if(localStorage.getItem('primarylandowner')) {
+    document.getElementById('primarylandowner').innerHTML = localStorage.getItem('primarylandowner');
+  } else {
+    document.getElementById('primarylandowner').innerHTML = 'None';
+  }
+  if(localStorage.getItem('primaryname')) {
+    document.getElementById('primaryname').innerHTML = localStorage.getItem('primaryname')
+  } else {
+    document.getElementById('primaryname').innerHTML = 'None'
+  }
+
+  if(localStorage.getItem('primaryconatct') == 'true') {
+    document.getElementById('primaryconatct').style.display = 'block'
+  }
+  if(localStorage.getItem('primarycompanyname')) {
+    document.getElementById('companyfullname').style.display = 'table-row';
+    document.getElementById('primarycompanyname').innerHTML = localStorage.getItem('primarycompanyname');
+  }
+  if(localStorage.getItem('primarypostcode')) {
+    document.getElementById('postcode').style.display = 'table-row';
+    document.getElementById('primarypostcode').innerHTML = localStorage.getItem('primarypostcode');
+  }
+  if(localStorage.getItem('primarynumber1')){
+    document.getElementById('primarynumber1').innerHTML = localStorage.getItem('primarynumber1')
+  } else {
+    document.getElementById('primarynumber1').innerHTML = 'None'
+  }
+
+  if(localStorage.getItem('psnfirst') == 'Primary') {
+    document.getElementById('psnfirst').innerHTML = '<strong class="govuk-tag govuk-tag--" id="c1landlineprimary">Primary contact number</strong>';
+  } else if(localStorage.getItem('psnfirst') == 'Secondary') {
+    document.getElementById('psnfirst').innerHTML = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary">Secondary contact number</strong>';
+  } else {
+    document.getElementById('psnfirst').innerHTML = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary"></strong>';
+  }
+
+  if(localStorage.getItem('primarynumber2')){
+    document.getElementById('primarynumber2').innerHTML = localStorage.getItem('primarynumber2')
+  } else {
+    document.getElementById('primarynumber2').innerHTML = 'None'
+  }
+
+  if(localStorage.getItem('psnsecond') == 'Primary') {
+    document.getElementById('psnsecond').innerHTML = '<strong class="govuk-tag govuk-tag--" id="c1landlineprimary">Primary contact number</strong>';
+  } else if(localStorage.getItem('psnsecond') == 'Secondary') {
+    document.getElementById('psnsecond').innerHTML = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary">Secondary contact number</strong>';
+  } else{
+    document.getElementById('psnsecond').innerHTML = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary"></strong>';
+  }
+
+  if(localStorage.getItem('primaryemail')){
+    document.getElementById('primaryemail').innerHTML = localStorage.getItem('primaryemail')
+  } else {
+    document.getElementById('primaryemail').innerHTML = 'None'
+  }
+
+  if(localStorage.getItem('primarynotes')){
+    document.getElementById('primarynotes').innerHTML = localStorage.getItem('primarynotes')
+  } else {
+    document.getElementById('primarynotes').innerHTML = 'None'
+  }
+ 
+//   let emailid = localStorage.getItem("landowneremail");
+//   if(emailid != 'test' && emailid) {
+//     document.getElementById('emailaddress').innerHTML = emailid;
+    
+//   } else {
+//     //document.getElementById('emailaddress').innerHTML = 'None';
+//     document.getElementById('emailaddress').innerHTML = 'sarah.phillips@example.com';
+//   }
+//   if(localStorage.getItem('landowneremailbanner')) {
+//     document.getElementById('confirmmessage').style.display = 'block';
+//   }
+//   // function personalDetails() {
+//   //   localStorage.removeItem('landowneremailbanner');
+//   //   window.location.href = "/sprint17/internal/parcel-details21#primary"
+//   // }
+
+// const urlParams = new URLSearchParams(window.location.search);
+// const myParam = urlParams.get('url');
+// console.info('url.....', myParam);
+// if(myParam) {
+//   function personalDetails() {
+//     localStorage.removeItem('landowneremailbanner');
+//     window.location.href = "/sprint17/internal/landowner-details11"
+//   }
+//   function emailAddress() {
+//     window.location.href = "/sprint17/internal/email-address?url=contactdetails"
+//   }
+//   document.getElementById('backid').innerHTML = 'Contact details';
+// } else{
+//   function personalDetails() {
+//     localStorage.removeItem('landowneremailbanner');
+//     window.location.href = "/sprint17/internal/parcel-details21#primary"
+//   }
+//   function emailAddress() {
+//     window.location.href = "/sprint17/internal/email-address"
+//   }
+//   document.getElementById('backid').innerHTML = 'Land Parcel details';
+// }
+</script>
+{% endblock %}

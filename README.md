@@ -1,2 +1,1 @@
-# lars
-LARs
+# lars-prototype

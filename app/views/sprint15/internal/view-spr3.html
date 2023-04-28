@@ -1,0 +1,135 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Site permission request added for land parcel AGL077542
+        </h1>
+      </div>
+      <a href="confirm-spr1.html" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-xl">Site permission request      </h1>
+      
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-m">Land Registry code</span>
+        AGL077542
+        <!--
+        <span class="govuk-caption-m" id="n-landowner"></span>
+        <span id="n-name"></span> -->
+        <p class="govuk-body govuk-!-font-size-19"><a href="parcel-details2.html">View parcel details</a></p>
+      </h1>
+      <dl class="govuk-summary-list">
+  
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Permission reference number</th>
+              <td class="govuk-table__cell">SPR323423C</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Permission status</th>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">
+                Planned
+              </strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Template used</th>
+              <td class="govuk-table__cell"><p class="govuk-body">LARS-T1   <a href="#" class="govuk-!-font-size-19 govuk-link">view the letter</a></p></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Request sent by
+              </th>
+              <td class="govuk-table__cell">Email</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Created by</th>
+              <td class="govuk-table__cell">Mill Thomas</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Creation date</th>
+              <td class="govuk-table__cell">20 December 2022</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Requested by</th>
+              <td class="govuk-table__cell">EES</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+              Add site permission conditions
+            </label>
+          </h3>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <button class="govuk-button" data-module="govuk-button" onclick="addSitePermission()">
+            Save condition
+          </button>
+        </div>
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Site permission condition</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Permission notes</th>
+              <th scope="col" class="govuk-table__header">Created by</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body" id="row"></tbody>
+        </table>
+
+    </div>
+  </div>
+  <script>
+   let obj = JSON.parse(localStorage.getItem('permissionsnotes')) || [];
+   var myList = '';
+   obj.sort( function ( a, b ) { return b.id - a.id; } );
+   obj.forEach(function (arrayItem) {
+      var x = arrayItem.permissionsnotes;
+      myList += '<tr class="govuk-table__row"><td scope="row" class="govuk-table__cell" style="width: 65%">'+arrayItem.permissionsnotes+'</td><td class="govuk-table__cell">'+arrayItem.createdby+' <BR> '+arrayItem.createddate+'</td><td class="govuk-table__cell"><p class="govuk-body"><a href="#" class="govuk-link">Edit</a></p></td></tr>'; 
+  });
+  document.getElementById('row').innerHTML = myList ? myList:'';
+   let i = localStorage.getItem('count') ? parseInt(localStorage.getItem('count'))+1 : 1;
+   function addSitePermission() {
+    let moredetail = document.getElementById("more-detail").value;
+    const currentMonth = new Date();
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = months[currentMonth.getMonth()];
+    var yyyy = today.getFullYear();
+    today = dd + ' ' + mm + ' ' + yyyy; 
+    if(moredetail) {
+      obj.push({'id':i,'permissionsnotes': moredetail, 'createdby': 'Mill Thomas (EA)', 'createddate': today});
+      obj.sort( function ( a, b ) { return b.id - a.id; } );
+      localStorage.setItem('permissionsnotes', JSON.stringify(obj));
+      localStorage.setItem('count', i);
+    }
+    
+    //obj.forEach(function (arrayItem) {
+      var myList = '';
+      obj.sort( function ( a, b ) { return b.id - a.id; } );
+      obj.forEach(function (arrayItem) {
+          var x = arrayItem.permissionsnotes;
+          myList += '<tr class="govuk-table__row"><td scope="row" class="govuk-table__cell" style="width: 65%">'+arrayItem.permissionsnotes+'</td><td class="govuk-table__cell">'+arrayItem.createdby+' <BR> '+arrayItem.createddate+'</td><td class="govuk-table__cell"><p class="govuk-body"><a href="#" class="govuk-link">Edit</a></p></td></tr>'; 
+      });
+      document.getElementById('row').innerHTML = myList ? myList:'';
+   // });
+    document.getElementById("more-detail").value = "";
+
+    i++;
+   }
+  </script>
+
+
+{% endblock %}

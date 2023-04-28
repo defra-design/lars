@@ -1,0 +1,113 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="add-landowner.html" class="govuk-back-link">Back</a>
+            
+                <h1 class="govuk-heading-l">Confirm the contact details for land parcel ST1234567
+                  <p></p>
+                  <div id="landownerdetails"></div>
+              
+
+
+              <a  href="parcel-details22.html"  class="govuk-button" data-module="govuk-button">
+                  Save and finish</a>
+                
+                
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+<script>
+  let x = '';
+  var retrievedObject = localStorage.getItem('landownerobject');
+  let object =  JSON.parse(retrievedObject);
+
+  let j = 1;
+  let primarycontact = '';
+  let psnfirst = '';
+  let psnsecond = '';
+  let contacttype = 'None';
+  let fullname = 'None';
+  let companyfullname = 'None';
+  let phonenumberfirst = 'None';
+  let phonenumbersecond = 'None';
+  let emailaddress = 'None';
+  let notes = 'None';
+  for(let i=0;i<object.length;i++) {
+    
+  if(object[i].primarycontact) {
+    primarycontact = '<strong class="govuk-tag govuk-tag--grey" id="primary1">primary contact</strong>';
+  } else {
+    primarycontact = '<strong class="govuk-tag govuk-tag--grey" id="primary1"></strong>';
+  }
+  if(object[i].psnfirst == 'Primary') {
+    psnfirst = '<strong class="govuk-tag govuk-tag--green" id="c1landlineprimary">Primary contact number</strong>';
+  } else if(object[i].psnfirst == 'Secondary') {
+    psnfirst = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary">Secondary contact number</strong>';
+  } else {
+    psnfirst = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary"></strong>';
+  }
+  if(object[i].psnsecond == 'Primary') {
+    psnsecond = '<strong class="govuk-tag govuk-tag--green" id="c1landlineprimary">Primary contact number</strong>';
+  } else if(object[i].psnsecond == 'Secondary') {
+    psnsecond = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary">Secondary contact number</strong>';
+  } else{
+    psnsecond = '<strong class="govuk-tag govuk-tag--yellow" id="c1mobileprimary"></strong>';
+  }
+  if(object[i].contacttype) {
+    contacttype = object[i].contacttype;
+  } else {
+    contacttype = 'None';
+  }
+  if(object[i].fullname){
+    fullname = object[i].fullname;
+  } else {
+    fullname = 'None';
+  }
+  if(object[i].companyfullname) {
+    companyfullname = object[i].companyfullname;
+  } else {
+    companyfullname = 'None';
+  }
+  if(object[i].phonenumberfirst) {
+    phonenumberfirst = object[i].phonenumberfirst;
+  } else {
+    phonenumberfirst = 'None';
+  }
+  if(object[i].phonenumbersecond) {
+    phonenumbersecond = object[i].phonenumbersecond;
+  } else {
+    phonenumbersecond = 'None';
+  }
+  if(object[i].emailaddress) {
+    emailaddress = object[i].emailaddress;
+  } else {
+    emailaddress = 'None';
+  }
+  if(object[i].notes) {
+    notes = object[i].notes;
+  } else {
+    notes = 'None';
+  }
+  x = x+'<div><h2 class="govuk-heading-m">Contact details '+j+'</h2><dl class="govuk-summary-list govuk-!-margin-bottom-9"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Contact type</dt><dd class="govuk-summary-list__value" id="c-individual">'+contacttype+'</dd><dd class="govuk-summary-list__actions"></dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">name</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key"><span id="c-lname">Landowner</span> full name</dt><dd class="govuk-summary-list__value" id="c-name">'+fullname+'</dd> '+primarycontact+'<dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">full name</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Company full name</dt><dd class="govuk-summary-list__value" id="c-companyname">'+companyfullname+'</dd><dd class="govuk-summary-list__actions" style="width: 28%; text-align: left;"></dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">name</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Address</dt><dd class="govuk-summary-list__value">1 Princes Street<br>Edinburgh<br>EH1 3DJ</dd><dd class="govuk-summary-list__actions"></dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key" >Landline</dt><dd class="govuk-summary-list__value"><p class="govuk-body govuk-!-font-size-19" id="c-landline">'+phonenumberfirst+'</p></dd><dd class="govuk-summary-list__actions" style="width: 28%; text-align: left;">'+psnfirst+'</dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Mobile</dt><dd class="govuk-summary-list__value"><p class="govuk-body govuk-!-font-size-19" id="c-mobile">'+phonenumbersecond+'</p></dd><dd class="govuk-summary-list__actions" style="width: 28%; text-align: left;">'+psnsecond+'</dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Email address</dt><dd class="govuk-summary-list__value"><p class="govuk-body govuk-!-font-size-19" id="c-emailaddress">'+emailaddress+'</p></dd><dd class="govuk-summary-list__actions"></dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Notes</dt><dd class="govuk-summary-list__value"><p class="govuk-body govuk-!-font-size-19" id="c-notes">'+object[i].notes+'</p></dd><dd class="govuk-summary-list__actions"></dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></dd></div></dl></div> ';
+  document.getElementById("landownerdetails").innerHTML = x;
+  j++;
+  }
+</script>
+{% endblock %}

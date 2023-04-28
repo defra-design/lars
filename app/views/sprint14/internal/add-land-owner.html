@@ -1,0 +1,141 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+  {% endblock %}
+{% block content %}
+
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="search-lars.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Create customer record
+    </h1>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Add landowner</h2>
+    <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 8 sections.</p>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Select the land parcel
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="landowner/landparcel-details.html" aria-describedby="eligibility-status">
+                Land parcel details
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="landparceldetails">Completed</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Contact details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="landowner/landowner-name.html" aria-describedby="company-information-status">
+              Contact name
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="landownername">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="landowner/address.html" aria-describedby="company-information-status">
+                Address 
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="address">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="landowner/contact-details.html" aria-describedby="contact-details-status">
+                Telephone number
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contactdetails">Not Started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="landowner/email-address.html" aria-describedby="list-convictions-status">
+                Email address
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="email">Not started</strong>
+          </li>
+        </ul>
+      </li>
+
+      <button class="govuk-button" data-module="govuk-button" onclick="savelandowner()">
+        Save
+      </button>
+    </ol>
+  </div>
+  
+</div>  
+</div>
+<script>
+  var x = localStorage.getItem("landparceltext");
+  var element = document.getElementById("landparceldetails");
+  
+  // if(x) {
+  //   document.getElementById('landparceldetails').innerHTML = 'Completed';
+  //   element.classList.remove("govuk-tag--grey");
+  // } else {
+  //   element.classList.add("govuk-tag--grey");
+  // }
+
+  var x1 = localStorage.getItem("landownernametext");
+  var element1 = document.getElementById("landownername");
+  if(x1) {
+    document.getElementById('landownername').innerHTML = 'Completed';
+    element1.classList.remove("govuk-tag--grey");
+  } else {
+    element1.classList.add("govuk-tag--grey");
+  }
+
+  var x2 = localStorage.getItem("addresstext");
+  var element2 = document.getElementById("address");
+  if(x2) {
+    document.getElementById('address').innerHTML = 'Completed';
+    element2.classList.remove("govuk-tag--grey");
+  } else {
+    element2.classList.add("govuk-tag--grey");
+  }
+
+  var x3 = localStorage.getItem("contactdetailstext");
+  var element3 = document.getElementById("contactdetails");
+  if(x3) {
+    document.getElementById('contactdetails').innerHTML = 'Completed';
+    element3.classList.remove("govuk-tag--grey");
+  } else {
+    element3.classList.add("govuk-tag--grey");
+  }
+
+  var x4 = localStorage.getItem("emailtext");
+  var element4 = document.getElementById("email");
+  if(x4) {
+    document.getElementById('email').innerHTML = 'Completed';
+    element4.classList.remove("govuk-tag--grey");
+  } else {
+    element4.classList.add("govuk-tag--grey");
+  }
+
+  function savelandowner() {
+    if(x && x1 && x2 && x3 && x4) {
+      window.location.href = "/sprint11/internal/landowner-details"
+    }
+  }
+</script>
+  
+
+{% endblock %}

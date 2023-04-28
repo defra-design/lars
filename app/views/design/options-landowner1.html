@@ -1,0 +1,135 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="options-add-more.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        What type of contact would you like to add for the land parcel ST1234567?
+                      </h1>
+                    </legend> <br>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="individual" onclick="optionsLandowner()" name="where-do-you-live" type="radio" value="Individual">
+                        <label class="govuk-label govuk-radios__label" for="individual">
+                          Co-owner
+                        </label>
+                      </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="individual" onclick="optionsLandowner()" name="where-do-you-live" type="radio" value="Individual">
+                        <label class="govuk-label govuk-radios__label" for="individual">
+                          Individual, self-employed or sole trader
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="business" onclick="optionsLandowner()" name="where-do-you-live" type="radio" value="Business">
+                        <label class="govuk-label govuk-radios__label" for="business">
+                          Business
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="associatedcontact" onclick="optionsLandowner()" name="where-do-you-live" type="radio" value="Associated contact" data-aria-controls="conditional-associatedcontact">
+                        <label class="govuk-label govuk-radios__label" for="associatedcontact">
+                          Associated contact
+                          </p>
+                        </label>
+                        <div  style="display:none;margin-top: 0 !important; margin-left: -30px !important;"  class="govuk-radios__input__conditional govuk-radios__input__conditional--hidden govuk-inset-text" id="asso">
+                          
+                          <div class="govuk-radios" data-module="govuk-radios" style="margin-left: 10px ;">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="a-tenant" onclick="associatedContact()" name="where-do-you-live1" type="radio" value="Tenant">
+                              <label class="govuk-label govuk-radios__label" for="a-tenant">
+                                Tenant
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="a-landmanager" onclick="associatedContact()" name="where-do-you-live1" type="radio" value="Land Manager">
+                              <label class="govuk-label govuk-radios__label" for="a-landmanager">
+                                Land manager
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="a-agent" onclick="associatedContact()" name="where-do-you-live1" type="radio" value="Agent">
+                              <label class="govuk-label govuk-radios__label" for="a-agent">
+                                Agent
+                              </label>                       
+                            </div>
+                          </div>
+
+
+                          </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="add-landowner1.html"  class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  <script>
+    let optionslandowner = localStorage.getItem('optionslandowner1');
+    let asscontact;
+    if(optionslandowner == 'Individual') {
+      document.getElementById('individual').checked = true;
+    } else if(optionslandowner == 'Business'){
+      document.getElementById('business').checked = true;
+    } else if(optionslandowner == 'Associated contact') {
+      document.getElementById('associatedcontact').checked = true;
+      document.getElementById("asso").style.display="block";
+      asscontact = localStorage.getItem('asscontactname1');
+      console.info('v............',asscontact);
+      if(asscontact == 'Tenant') {
+        document.getElementById('a-tenant').checked = true;
+      } else if(asscontact == 'Land Manager') {
+        document.getElementById('a-landmanager').checked = true;
+      } else {
+        document.getElementById('a-agent').checked = true;
+      }
+    } else {
+      document.getElementById('individual').checked = false;
+      document.getElementById('business').checked = false;
+      document.getElementById('associatedcontact').checked = false;
+    }
+    
+    function optionsLandowner() {
+      let landownername =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      localStorage.setItem("optionslandowner1", landownername);
+      console.info('landownername1.......', landownername);
+      //Associated Conatact
+      Array.from( document.querySelectorAll('input[name="where-do-you-live1"]:checked'), input => input.checked = false );
+      if(landownername == 'Associated contact') {
+        document.getElementById("asso").style.display="block";
+      } else {
+        document.getElementById("asso").style.display="none";
+      }
+    }
+
+    function associatedContact() {
+      let landownername1 =  document.querySelector('input[name="where-do-you-live1"]:checked').value;
+      localStorage.setItem("asscontactname1", landownername1);
+    }
+  </script>
+
+{% endblock %}

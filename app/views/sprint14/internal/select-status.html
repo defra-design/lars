@@ -1,0 +1,93 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="view-spr4.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-heading-xl">Update the status for this site permission request</h1>
+                      <span class="govuk-caption-xl">Choose the new status for this request</span>
+
+                    
+                    </legend> <br>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                          Granted
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                          Presumed granted
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                          Requested
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                          Declined
+                        </label>
+                      </div>
+                    </div>
+                      
+                      
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="select-response.html"  class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  
+  <!-- <script>
+    let optionslandowner = localStorage.getItem('contacttype');
+    
+    
+    if(optionslandowner == 'Conatactdetails1') {
+      document.getElementById('c1').checked = true;
+    } else if(optionslandowner == 'Conatactdetails2') {
+      document.getElementById('c2').checked = true;
+    }
+    
+    function optionsLandowner() {
+      let landownername =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      localStorage.setItem("contacttype", landownername);
+            
+      if(landownername == 'Conatactdetails1') { 
+        localStorage.setItem("landmanageremailaddress", "joyce@meyer.co.uk");
+      } else if(landownername == 'Conatactdetails2') {
+        localStorage.setItem("landowneremailaddress", "camila.anderson@gmail.com");
+      }
+      
+     
+    }
+  </script> -->
+
+{% endblock %}

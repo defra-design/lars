@@ -1,0 +1,48 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+
+@import 'colours';
+
+.dwp-timeline {
+  border-left: 3px solid $govuk-blue;
+}
+
+.dwp-timeline__entry {
+  margin: 2em 0;
+  padding-left: 1em;
+  position: relative;
+
+  &::before {
+    background-color: $govuk-blue;
+    content: ' ';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: .5em;
+    width: 10px;
+  }
+
+  .dwp-timeline__title {
+    display: block;
+    font-weight: 700;
+  }
+
+  .dwp-timeline__author,
+  .dwp-timeline__date {
+    color: $secondary-text-colour;
+    display: block;
+  }
+
+  .dwp-timeline__info {
+    margin-top: 0;
+  }
+
+  .dwp-timeline__body {
+    display: block;
+  }
+}
+

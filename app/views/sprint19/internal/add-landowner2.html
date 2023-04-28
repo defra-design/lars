@@ -1,0 +1,344 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div>
+                <a href="options-landowner1.html" class="govuk-back-link">Back</a>              
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Add <span id="c-landowner">landowner</span> details
+                    <span class="govuk-caption-l">Enter the <span id="c-landowner1">landowner</span> details for land parcel ST1234567.
+                    </span>
+                  </h1>
+                </legend>
+                <br>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    Full name
+                  </label>
+                  <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="full-name">
+                
+                
+                  <br> <br>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox"  onclick="primaryContact()">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      Set as primary contact
+                    </label>
+                  </div>
+                
+                
+                </div>
+
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="company-full-name">
+                    Company full name (optional)
+                  </label>
+                  <input class="govuk-input" id="company-full-name" name="company-full-name" type="text" autocomplete="company-full-name">
+                </div>
+
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-postcode">
+                    Postcode
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">               
+<br>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Find address
+                </button>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Enter address manually
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-1">
+                          Address line 1
+                        </label>
+                        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-2">
+                          Address line 2 (optional)
+                        </label>
+                        <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town">
+                          Town or city
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-county">
+                          County (optional)
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-postcode">
+                          Postcode
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+                      </div>
+                    </fieldset>
+                  </div>
+                </details>
+              </div>
+              <div class="govuk-form-group" style="display: flex; flex-direction: row;">
+                <div style="margin-right: 30px;">
+                <label class="govuk-label" for="landline-number">
+                  Landline number 1
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="landline-number" name="landline-number" type="text" autocomplete="landline-number">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="l1">
+                    Primary or secondary number 
+                  </label>
+                  <select class="govuk-select" id="l1" name="l1" onchange="landlineChange()">
+                      <option value=""></option>
+                      <option value="Primary">Primary</option>
+                      <option value="Secondary">Secondary</option>
+
+                    </select> <a href="#" class="govuk-link govuk-link">Add more</a>
+
+                </div>
+              </div>
+             <!--
+              <div class="govuk-form-group" style="display: flex; flex-direction: row;">
+                <div style="margin-right: 30px;">
+                <label class="govuk-label" for="landline-number1">
+                  Landline number 2
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="landline-number1" name="landline-number1" type="text" autocomplete="landline-number1">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="sort">
+                    Primary or secondary contact 
+                  </label>
+                  <select class="govuk-select" id="sort" name="sort">
+                    <option value="updated"></option>
+                    <option value="published">Secondary</option>
+                    <option value="updated">Primary</option>
+                  </select>
+                </div>
+              </div>
+-->
+
+              <div class="govuk-form-group" style="display: flex; flex-direction: row;">
+                <div style="margin-right: 30px;">
+                <label class="govuk-label" for="mobile-number">
+                  Mobile number 1
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="mobile-number" name="mobile-number" type="text" autocomplete="mobile-number">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="m1">
+                    Primary or secondary number 
+                  </label>
+                  <select class="govuk-select" id="m1" name="m1" onchange="mobileChange()">
+                    <option value=""></option>
+                    <option value="Primary">Primary</option>
+                    <option value="Secondary">Secondary</option>
+                  </select> <a href="#" class="govuk-link govuk-link">Add more</a>
+                </div>
+              </div>
+
+              <!--
+              <div class="govuk-form-group" style="display: flex; flex-direction: row;">
+                <div style="margin-right: 30px;">
+                <label class="govuk-label" for="mobile-number1">
+                  Mobile number 2
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="mobile-number1" name="mobile-number1" type="text" autocomplete="mobile-number1">
+              </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="sort">
+                    Primary or secondary contact 
+                  </label>
+                  <select class="govuk-select" id="sort" name="sort">
+                    <option value="published"></option>
+                    <option value="updated">Primary</option>
+                    <option value="published">Secondary</option>
+
+                  </select>
+                </div>
+              </div>
+-->
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="email-address">
+                    Email (optional)
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="text" autocomplete="email-address"> <a href="#" class="govuk-link govuk-link">Add more email</a>
+                </div>
+
+
+                <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="notes">
+                      Notes (optional)
+                    </label>
+                    <textarea class="govuk-textarea govuk-js-character-count" id="notes" name="notes" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+                  </div>
+                  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                    You can enter up to 200 characters
+                  </div>
+                </div>
+
+              </fieldset>
+              
+              
+              <button onclick="newLandownerDetails()"  class="govuk-button" data-module="govuk-button">
+                Continue </button>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  <script>
+    let optionslandowner = localStorage.getItem('asscontactname2');
+    let primarycontact = localStorage.getItem('primarycontactbox2');
+    function newLandownerDetails(){
+      let fullname =  document.getElementById('full-name').value;
+      let landlinenumber =  document.getElementById('landline-number').value;
+      let mobilenumber =  document.getElementById('mobile-number').value;
+      let emailaddress =  document.getElementById('email-address').value;
+      let notes =  document.getElementById('notes').value;
+      let companyname = document.getElementById('company-full-name').value;
+      localStorage.setItem("fullname2", fullname);
+      if(landlinenumber) {
+        localStorage.setItem("landlinenumber2", landlinenumber); 
+      } else {
+        localStorage.setItem("landlinenumber2", 'None'); 
+      }
+
+      if(mobilenumber) {
+        localStorage.setItem("mobilenumber2", mobilenumber); 
+      } else {
+        localStorage.setItem("mobilenumber2", 'None'); 
+      }
+
+      if(emailaddress) {
+        localStorage.setItem("emailaddress2", emailaddress); 
+      } else {
+        localStorage.setItem("emailaddress2", 'None'); 
+      }
+      if(notes) {
+        localStorage.setItem("notes2", notes); 
+      } else {
+        localStorage.setItem("notes2", 'None'); 
+      }
+      if(companyname){
+        localStorage.setItem('companyname2', companyname)
+      } else {
+        localStorage.setItem('companyname2', 'None');
+      }
+      window.location.href = "options-add-more3.html"
+    }
+    let fullnameedit = localStorage.getItem('fullname2');
+    let landlinenumberedit = localStorage.getItem('landlinenumber2');
+    let mobilenumberedit = localStorage.getItem('mobilenumber2');
+    let emailaddressedit = localStorage.getItem('emailaddress2');
+    let companynameedit = localStorage.getItem('companyname2');
+    let notesedit = localStorage.getItem('notes2');
+    if(fullnameedit) {
+      document.getElementById('full-name').value = fullnameedit;
+    } else {
+      document.getElementById('full-name').value = '';
+    }
+    if(landlinenumberedit && landlinenumberedit != 'None') {
+      document.getElementById('landline-number').value = landlinenumberedit;
+    } else {
+      document.getElementById('landline-number').value = '';
+    }
+    if(mobilenumberedit && mobilenumberedit != 'None') {
+      document.getElementById('mobile-number').value = mobilenumberedit;
+    } else {
+      document.getElementById('mobile-number').value = '';
+    }
+    if(emailaddressedit && emailaddressedit != 'None') {
+      document.getElementById('email-address').value = emailaddressedit;
+    } else {
+      document.getElementById('email-address').value = '';
+    }
+    if(companynameedit && companynameedit !='None') {
+      document.getElementById('company-full-name').value = companynameedit;
+    } else{
+      document.getElementById('company-full-name').value = '';
+    }
+    if(notesedit && notesedit !='None') {
+      document.getElementById('notes').value = notesedit;
+    } else{
+      document.getElementById('notes').value = '';
+    }
+
+    if(optionslandowner){
+      document.getElementById('c-landowner').innerHTML = localStorage.getItem('asscontactname2').toLowerCase();
+      document.getElementById('c-landowner1').innerHTML = localStorage.getItem('asscontactname2').toLowerCase();
+    }
+
+     //Check box checked or not
+     function primaryContact() { 
+      let lfckv = document.getElementById("waste").checked;
+      console.info('lfckv.........', lfckv);
+      localStorage.setItem('primarycontactbox2', lfckv);
+    }
+
+    if(primarycontact == 'true') {
+      document.getElementById("waste").checked =true;
+    } else {
+      document.getElementById("waste").checked =false;
+    }
+
+     //landine type change 
+  function landlineChange() {
+    let type1 = document.getElementById("l1").value;
+    localStorage.setItem('contact2landlinetype2', type1);
+  }
+  //Mobile type change
+  function mobileChange() {
+    let type2 = document.getElementById("m1").value;
+    localStorage.setItem('contact2mobiletype2', type2);
+  }
+  if(localStorage.getItem('contact2landlinetype2')) {
+    let text = localStorage.getItem('contact2landlinetype2');
+    let select = document.querySelector('#l1');
+    let options = Array.from(select.options);
+    let optionToSelect = options.find(item => item.text ===text);
+    optionToSelect.selected = true;
+  }
+  if(localStorage.getItem('contact2mobiletype2')) {
+    let text1 = localStorage.getItem('contact2mobiletype2');
+    console.info('text1....', text1)
+    let select1 = document.querySelector('#m1');
+    let options1 = Array.from(select1.options);
+    let optionToSelect1 = options1.find(item => item.text ===text1);
+    optionToSelect1.selected = true;
+  }
+  
+  </script>
+
+{% endblock %}

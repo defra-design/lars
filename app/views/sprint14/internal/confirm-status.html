@@ -1,0 +1,197 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="select-response.html" class="govuk-back-link">Back</a>
+            
+                <h1 class="govuk-heading-l">Check your update and attachments
+                </h1>
+                <!--
+                <h1 class="govuk-heading-l">Confirm the <span id="c-landowner">landowner</span> details for land parcel ST1234567
+              </h1>
+                -->
+              <h2 class="govuk-heading-m"></h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+               
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Response sent by
+                  </dt>
+                  <dd class="govuk-summary-list__value" id="fullname">
+                    Sarah Philips
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Response received on
+                  </dt>
+                  <dd class="govuk-summary-list__value" id="receiveon">
+                    18 Janurary 2023
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd>
+                </div>
+
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <span id="c-lname">Contact responded by</span>
+                  </dt>
+                  <dd class="govuk-summary-list__value" >
+                   <span id="contactres"> Letter </span> 
+                  </dd> 
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd> 
+                </div>
+
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    New status
+                  </dt>
+                  <dd class="govuk-summary-list__value" >
+                    <strong class="govuk-tag" id="newstatus">
+                      Granted
+                    </strong>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <span id="c-lname">Duration</span>
+                  </dt>
+                  <dd class="govuk-summary-list__value" >
+                   <span id="expirydate"> 23 January 2023 to 22 January 2024 </span> 
+                  </dd> 
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden">name</span>
+                    </a>
+                  </dd> 
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" id="addressoremail">
+                    Permission conditions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                   <span id="summary">Accepted this request but no access on Sunday</span>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                  </dd>
+                </div>
+            
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" id="addressoremail">
+                    Actions to be taken
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                   <span id="summary1">Accepted this request but no access on Sunday</span>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                  </dd>
+                </div>
+                
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Attached letter or email
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body govuk-!-font-size-19" id="filename">EES-AGL077542-23122022-Response.pdf</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Update<span class="govuk-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+                
+              </dl>
+             
+          
+
+
+              <a  href=view-spr6.html class="govuk-button" data-module="govuk-button">
+                Save and finish</a>
+                
+                
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+<script>
+  let fullname = localStorage.getItem('responsefullname');
+  document.getElementById('fullname').innerHTML = fullname;
+
+  let receiveon = localStorage.getItem('receivedate');
+  document.getElementById('receiveon').innerHTML = receiveon;
+
+  let expirydate1 = localStorage.getItem('permissionstartdate');
+  let expirydate2 = localStorage.getItem('permissionenddate');
+  document.getElementById('expirydate').innerHTML =  expirydate1 + ' to ' + expirydate2;
+
+
+  let status = localStorage.getItem('permissionstatus');
+  document.getElementById('newstatus').innerHTML = status;
+
+  let contactres = localStorage.getItem('contactrespond');
+  document.getElementById('contactres').innerHTML = contactres;
+
+  let respondsum = localStorage.getItem('responsesummary');
+  document.getElementById('summary').innerHTML = respondsum;
+
+  let actionsum = localStorage.getItem('actionsummary');
+  document.getElementById('summary1').innerHTML = actionsum;
+
+  let copyfile = localStorage.getItem('copyfile');
+  document.getElementById('filename').innerHTML = copyfile ? copyfile:'EES-AGL077542-23122022-Response.pdf';
+
+  function newLandownerDetails() {
+    if(status == 'Granted'){
+      window.location.href = "/sprint13/internal/view-spr6"
+      } else {
+      window.location.href = "/sprint13/internal/view-spr7"
+      }
+  }
+
+</script>
+{% endblock %}

@@ -1,0 +1,228 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="view-spr5.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-heading-xl">Add the details of the permission request</h1>
+                      <span class="govuk-caption-xl">Include any conditions or actions required before a site visit</span>
+                    </legend> <br>
+                    
+                    
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h4 class="govuk-fieldset__heading">
+                              Enter the permission dates
+                            </h4>
+                          </legend>
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day1">
+                            Start date
+                          </label>
+                          <div id="passport-issued-hint" class="govuk-hint">
+                            For example, 27 12 2022
+                          </div>
+                          <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day1">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day1" name="passport-issued-day1" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month1">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month1" name="passport-issued-month1" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year1">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year1" name="passport-issued-year1" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                         <!--
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h4 class="govuk-fieldset__heading">
+                              Enter the permission end date
+                            </h4>
+                          </legend> -->
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day1">
+                            Add the end date if there is one
+                          </label>
+                          <!--
+                          <div id="passport-issued-hint" class="govuk-hint">
+                            For example, 27 12 2023
+                          </div>-->
+                          <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day2">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day2" name="passport-issued-day2" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month2">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month2" name="passport-issued-month2" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year2">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year2" name="passport-issued-year2" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+
+                      <br>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="responsesum">
+                          <b>Add permission conditions</b>
+                        </label>
+                        <div id="more-detail-hint" class="govuk-hint">
+                          Add any conditions of access that have been agreed.
+                        </div>
+                        <textarea class="govuk-textarea" id="responsesum" name="more-detail" rows="5" aria-describedby="more-detail-hint" onchange="responsesummary()"></textarea>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="actionsummary">
+                          <b>Add action list</b>
+                        </label>
+                      <div id="more-detail-hint" class="govuk-hint">
+                        Briefly describe any resulting actions
+                      </div>
+                      <textarea class="govuk-textarea" id="actionsummary" name="more-detail" rows="5" aria-describedby="more-detail-hint" onchange="actionsummary()"></textarea>
+                    </div>
+                    <a  href="confirm-status.html" onclick="selectresponse()" class="govuk-button" data-module="govuk-button">
+                      Continue </a>
+                    </div>
+                  </fieldset>
+                </div>
+              
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  
+  <script>
+  function selectresponse() {
+   // let day  = document.getElementById('passport-issued-day').value;
+    let day1  = document.getElementById('passport-issued-day1').value;
+    let day2  = document.getElementById('passport-issued-day2').value;
+
+   // let month = document.getElementById('passport-issued-month').value;
+    let month1 = document.getElementById('passport-issued-month1').value;
+    let month2 = document.getElementById('passport-issued-month2').value;
+
+   // let year = document.getElementById('passport-issued-year').value;
+    let year1 = document.getElementById('passport-issued-year1').value;
+    let year2 = document.getElementById('passport-issued-year2').value;
+
+    //let fullname = document.getElementById('address-line-1').value;
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    //let receivedate = day+' '+months[month-1]+' '+year;
+    let permissionstartdate = day1+' '+months[month1-1]+' '+year1;
+    let permissionenddate = day2+' '+months[month2-1]+' '+year2;
+
+   // localStorage.setItem("receivedate", receivedate);
+    localStorage.setItem("permissionstartdate", permissionstartdate);
+    localStorage.setItem("permissionenddate", permissionenddate);
+    //localStorage.setItem('responsefullname', fullname);
+
+    
+
+  }
+
+  function newSatatusRequest() {
+    let type2 = document.getElementById("status").value;
+    localStorage.setItem('permissionstatus', type2);
+  }
+
+  function contactRespond() {
+    let type3 = document.getElementById("contactres").value;
+    localStorage.setItem('contactrespond', type3);
+  }
+
+  function responsesummary() {
+    let type4 = document.getElementById("responsesum").value;
+    localStorage.setItem('responsesummary', type4);
+  }
+
+  function actionsummary() {
+    let type6 = document.getElementById("actionsummary").value;
+    localStorage.setItem('actionsummary', type6);
+  }
+
+  function fileupload() {
+    let type5 = document.getElementById('file-upload-1').value;
+    localStorage.setItem('copyfile', type5.split("\\").pop());
+  }
+
+    // let optionslandowner = localStorage.getItem('contacttype');
+    
+    
+    // if(optionslandowner == 'Conatactdetails1') {
+    //   document.getElementById('c1').checked = true;
+    // } else if(optionslandowner == 'Conatactdetails2') {
+    //   document.getElementById('c2').checked = true;
+    // }
+    
+    // function optionsLandowner() {
+    //   let landownername =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+    //   localStorage.setItem("contacttype", landownername);
+            
+    //   if(landownername == 'Conatactdetails1') { 
+    //     localStorage.setItem("landmanageremailaddress", "joyce@meyer.co.uk");
+    //   } else if(landownername == 'Conatactdetails2') {
+    //     localStorage.setItem("landowneremailaddress", "camila.anderson@gmail.com");
+    //   }
+      
+     
+    // }
+  </script>
+
+{% endblock %}

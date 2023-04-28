@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+  <div style="position: relative;
+  top: 60px;">
+
+    {% include './../../includes/head.html' %}
+  </div>
+ 
+  <div class="govuk-panel govuk-panel--confirmation">
+     <div class="govuk-header__container govuk-width-container">
+    <h1 class="govuk-panel__title govuk-!-text-align-left">
+      Land Access Request service (LARs)
+    </h1> 
+  
+    <div class="govuk-panel__body govuk-!-text-align-left govuk-!-font-size-19 govuk-!-padding-bottom-5">
+      Use LARs to view, manage and request permission to access land from landowners, managers and tenants.
+    </div>
+  </div>
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+{% block content %}
+
+{% endblock %}
+
+<br>
+<h2 class="govuk-heading-m">Home</h2>
+
+
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" data-module="gem-track-click">
+        
+      <div class="gem-c-cards">
+      <ul class="gem-c-cards__list" data-track-count="cardList">
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/manage-your-benefit" data-track-dimension="Manage an existing benefit, payment or claim" data-track-options='{"dimension28":"8","dimension29":"Manage an existing benefit, payment or claim","dimension114":1}' data-track-count="cardLink" href="#">Access dashboard</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Check your summary of reqested and granted permissions.</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/looking-for-work" data-track-dimension="Benefits and financial support if you're looking for work" data-track-options="{&quot;dimension28&quot;:&quot;8&quot;,&quot;dimension29&quot;:&quot;Benefits and financial support if you're looking for work&quot;,&quot;dimension114&quot;:2}" data-track-count="cardLink" href="search-lars.html">Search LARs</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Find land parcel or landowners and view or update their records.</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/unable-to-work" data-track-dimension="Benefits and financial support if you're temporarily unable to work" data-track-options="{&quot;dimension28&quot;:&quot;8&quot;,&quot;dimension29&quot;:&quot;Benefits and financial support if you're temporarily unable to work&quot;,&quot;dimension114&quot;:3}" data-track-count="cardLink" href="parcel-details21.html">Create site permission request
+                </a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Create a site permission request for your land parcel.
+  </p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/families" data-track-dimension="Benefits and financial support for families" data-track-options='{"dimension28":"8","dimension29":"Benefits and financial support for families","dimension114":4}' data-track-count="cardLink" href="#">Manage templates</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Amend and download your email and letter templates.</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/disability" data-track-dimension="Benefits and financial support if you're disabled or have a health condition" data-track-options="{&quot;dimension28&quot;:&quot;8&quot;,&quot;dimension29&quot;:&quot;Benefits and financial support if you're disabled or have a health condition&quot;,&quot;dimension114&quot;:5}" data-track-count="cardLink" href="#">Produce reports</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Generate your site visit and permissions reports.</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/help-for-carers" data-track-dimension="Benefits and financial support if you're caring for someone" data-track-options="{&quot;dimension28&quot;:&quot;8&quot;,&quot;dimension29&quot;:&quot;Benefits and financial support if you're caring for someone&quot;,&quot;dimension114&quot;:6}" data-track-count="cardLink" href="#">Add, remove or edit  users</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Update the LARs user list.</p>
+            </div>
+          </li>
+
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/low-income" data-track-dimension="Benefits and financial support if you're on a low income" data-track-options="{&quot;dimension28&quot;:&quot;8&quot;,&quot;dimension29&quot;:&quot;Benefits and financial support if you're on a low income&quot;,&quot;dimension114&quot;:7}" data-track-count="cardLink" href="/browse/benefits/low-income">Add a new landowner</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Add the contact details for a new landowner.</p>
+            </div>
+          </li>
+          <!--
+
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" data-track-category="browseClicked" data-track-action="topicsLink" data-track-label="/browse/benefits/bereavement" data-track-dimension="Benefits and financial support when someone dies" data-track-options='{"dimension28":"8","dimension29":"Benefits and financial support when someone dies","dimension114":8}' data-track-count="cardLink" href="/browse/benefits/bereavement">Benefits and financial support when someone dies</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Help with costs and funeral expenses after someone has died. Includes Universal Credit.</p>
+            </div>
+          </li>
+
+          -->
+
+  </ul>  </div>
+  
+  
+      </div>
+    </div>
+  </div>
+  
+
+
+{% endblock %}

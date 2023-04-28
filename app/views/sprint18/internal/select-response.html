@@ -1,0 +1,186 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="view-spr5.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-heading-xl">Add the response and status for this permission request</h1>
+                      <span class="govuk-caption-xl">Add the details of the response to the permission request</span>
+                    </legend> <br>
+                    
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="address-line-1">
+                        <b>Who sent the response?</b>
+                      </label>
+                      <span class="govuk-caption-m">Enter the full name</span>
+                      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+                    </div>
+
+
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h4 class="govuk-fieldset__heading">
+                            When did you receive the response?
+                          </h4>
+                        </legend>
+                        <div id="passport-issued-hint" class="govuk-hint">
+                          For example, 20 1 2023
+                        </div>
+                        <div class="govuk-date-input" id="passport-issued">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contactres">
+                        <b>How did the contact respond?</b>
+                      </label>
+                      <select class="govuk-select" id="contactres" name="sort" onchange="contactRespond()">
+                        <option value="updated" selected></option>
+                        <option value="Phone">Phone</option>
+                        <option value="Letter">Letter</option>
+                        <option value="Email">Email</option>
+
+                      </select>
+                    </div>
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="status">
+                        <b>Choose the new status for this request</b>
+                      </label>
+                      <select class="govuk-select" id="status" name="sort" onchange="newSatatusRequest()">
+                        <option value="updated" selected></option>
+                        <option value="Granted">Granted</option>
+                        <option value="Presumed granted">Presumed granted</option>
+                        <option value="Denied">Denied</option>
+                      </select>
+                    </div>
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="file-upload-1">
+                        <b>Attach a copy of the letter or email</b>
+                      </label>
+                      <input class="govuk-file-upload" id="file-upload-1" onchange="fileupload()" name="file-upload-1" type="file"> 
+                    </div>
+                      
+                      
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="javascript:;" onclick="selectresponse()" class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  
+  <script>
+  function selectresponse() {
+    let day  = document.getElementById('passport-issued-day').value;
+   // let day1  = document.getElementById('passport-issued-day1').value;
+    //let day2  = document.getElementById('passport-issued-day2').value;
+
+    let month = document.getElementById('passport-issued-month').value;
+    //let month1 = document.getElementById('passport-issued-month1').value;
+    //let month2 = document.getElementById('passport-issued-month2').value;
+
+    let year = document.getElementById('passport-issued-year').value;
+    //let year1 = document.getElementById('passport-issued-year1').value;
+    //let year2 = document.getElementById('passport-issued-year2').value;
+
+    let fullname = document.getElementById('address-line-1').value;
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    let receivedate = day+' '+months[month-1]+' '+year;
+   // let permissionstartdate = day1+' '+months[month1-1]+' '+year1;
+    //let permissionenddate = day2+' '+months[month2-1]+' '+year2;
+
+    localStorage.setItem("receivedate", receivedate);
+    //localStorage.setItem("permissionstartdate", permissionstartdate);
+    //localStorage.setItem("permissionenddate", permissionenddate);
+    localStorage.setItem('responsefullname', fullname);
+
+    if(document.getElementById("status").value == 'Granted') {
+      window.location.href = "/sprint17/internal/select-response1"
+    } else {
+      window.location.href = "/sprint17/internal/select-response2"
+    }
+    
+
+  }
+
+  function newSatatusRequest() {
+    let type2 = document.getElementById("status").value;
+    localStorage.setItem('permissionstatus', type2);
+  }
+
+  function contactRespond() {
+    let type3 = document.getElementById("contactres").value;
+    localStorage.setItem('contactrespond', type3);
+  }
+
+  function responsesummary() {
+    let type4 = document.getElementById("responsesum").value;
+    localStorage.setItem('responsesummary', type4);
+  }
+
+  function actionsummary() {
+    let type6 = document.getElementById("actionsummary").value;
+    localStorage.setItem('actionsummary', type6);
+  }
+
+  function fileupload() {
+    let type5 = document.getElementById('file-upload-1').value;
+    localStorage.setItem('copyfile', type5.split("\\").pop());
+  }
+
+    
+  </script>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="parcel-details1.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Select the contact you want to send visit permission to land parcel ST1234567
+                      </h1>
+                    </legend> <br>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="c1" onclick="optionsLandowner()" name="where-do-you-live" type="radio" value="Conatactdetails1">
+                        <label class="govuk-label govuk-radios__label" for="c1">
+                          <span class="govuk-!-font-weight-bold" id="contacttype">label1</span><br>
+                          <span id="name">label1</span><br>
+                          <span class="govuk-tag govuk-tag--yellow" id="primary">label1</span>
+                        </label>
+                      </div> <br>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="c2" onclick="optionsLandowner()" name="where-do-you-live" type="radio" value="Conatactdetails2">
+                        <label class="govuk-label govuk-radios__label" for="c2">
+                          <span class="govuk-!-font-weight-bold" id="contacttype1">label1</span><br>
+                          <span id="name1">label1</span><br>
+                          <span class="govuk-tag govuk-tag--yellow" id="primary1">label1</span>
+                        </label>
+                      </div>
+                      
+                      
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="select-communication-type.html"  class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  <script>
+    let optionslandowner = localStorage.getItem('contacttype');
+    document.getElementById('contacttype').innerHTML = localStorage.getItem('asscontactname');
+    document.getElementById('name').innerHTML = localStorage.getItem('fullname');
+    if(localStorage.getItem('primarycontactbox') == 'true') {
+      document.getElementById("primary").classList.remove("govuk-tag--yellow");
+      document.getElementById('primary').innerHTML = 'PRIMARY CONTACT';
+    } else {
+      document.getElementById('primary').innerHTML = 'SECONDARY CONTACT';
+    }
+    document.getElementById('contacttype1').innerHTML = localStorage.getItem('asscontactname1');
+    document.getElementById('name1').innerHTML = localStorage.getItem('fullname1');
+    if(localStorage.getItem('primarycontactbox1') == 'true') {
+      document.getElementById("primary1").classList.remove("govuk-tag--yellow");
+      document.getElementById('primary1').innerHTML = 'PRIMARY CONTACT';
+    } else {
+      document.getElementById('primary1').innerHTML = 'SECONDARY CONTACT';
+    }
+    
+    if(optionslandowner == 'Conatactdetails1') {
+      document.getElementById('c1').checked = true;
+    } else if(optionslandowner == 'Conatactdetails2') {
+      document.getElementById('c2').checked = true;
+    }
+    
+    function optionsLandowner() {
+      let landownername =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      localStorage.setItem("contacttype", landownername);
+     
+    }
+  </script>
+
+{% endblock %}

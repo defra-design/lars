@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-thirds-from-desktop">
+              <div>
+                <a href="select-contact-type1.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Edit the letter template 
+                      </h1>
+                      <span class="govuk-caption-l">You can edit this letter to include information specific to this permission request.</span>
+
+                    </legend> <br>
+                    
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="l1">
+                        Choose your template
+
+                      </label>
+                      <select class="govuk-select" id="l1" name="l1">
+                          <option value=""></option>
+                          <option value="Primary">LARS-initial introduction-1</option>
+                          <option value="Secondary">LARS-initial introduction-2</option>    
+                        </select>     
+                    </div>
+                    
+                    <br>
+
+                    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+                      <div class="govuk-form-group">
+                        <!-- <label class="govuk-label" for="notes">
+                          Label name
+                        </label> -->
+                        <textarea class="govuk-textarea govuk-js-character-count" id="notes" name="notes" rows="20" aria-describedby="with-hint-info with-hint-hint">Dear [name goes here]                          
+                          I work for the Environment Agency.  As part of our role to protect and improve the environment, we (the Environment Agency) need to monitor the health of our rivers and streams. We are setting up a new network of randomly selected monitoring sites, known as the River Surveillance Network (RSN).  I am writing to you because we need access to a site via your land, to assess its suitability for inclusion in this network. Full details of the RSN can be found in the enclosed handout.
+                          
+                          We would like to visit the site shown on the map overleaf by a [colour] dot.  We will assess parking, access and potential sampling locations, to see if they are suitable for the RSN.  The site visits are planned between June and October 2021.  Staff visiting the site will be carrying identification. If the site is suitable, monitoring would be undertaken [describe monitoring pattern for that site based on panel assignment if known] starting in January 2023. Each year that the site is actively monitored we will need to visit the sites every month to take water quality samples, twice a year in spring and autumn to look at the invertebrates and algae, and once in the summer to look at the plants and habitat.  All monitoring would be undertaken within a 500 m reach up or downstream from the point identified.
+                          
+                          If you would like to discuss any aspect of the RSN network please contact me by phone or email shown below.  Please also contact me if you have any reason why we would be unable to do a site visit or select the site for the RSN. If we do not hear from you, we will assume that the site assessment can go ahead and will be in touch at a later date if it is suitable for inclusion in the network.
+                        
+                          Department for Environment, Food and Rural Affairs (Defra) This email and any attachments is intended for the named recipient only. If you have received it in error you have no authority to use, disclose, store or copy any of its contents and you should destroy it and inform the sender. Whilst this email and associated attachments will have been checked for known viruses whilst within Defra systems we can accept no responsibility once it has left our systems. Communications on Defra's computer systems may be monitored and/or recorded to secure the effective operation of the system and for other lawful purposes.
+                        </textarea>
+                        </div>
+                      <!-- <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                        You can enter up to 200 characters
+                      </div> -->
+                      <br>
+                      <p class="govuk-body"><a href="#" class="govuk-!-font-size-19 govuk-link">Preview the letter</a></p>
+
+                    </div>
+                  </fieldset>
+                </div>
+                <a  href="confirm-spr1.html"  class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  
+
+{% endblock %}

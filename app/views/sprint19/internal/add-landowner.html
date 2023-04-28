@@ -1,0 +1,273 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div>
+                <a href="parcel-details21.html" class="govuk-back-link">Back</a>              
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Add <span id="c-landowner">contact</span> details
+                    <span class="govuk-caption-l">Enter the <span id="c-landowner1">contact</span> details for Land parcel ID AGL077542
+                    </span>
+                  </h1>
+                </legend>
+                <br>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">Select a contact type</label>
+                  <select class="govuk-select" id="contacttype1" name="landowneroptions">
+                    <option value=""></option>
+                    <option value="Landowner">Landowner</option>
+                    <option value="Tenant">Tenant</option>
+                    <option value="Land manager">Land manager</option>
+                    <option value="Agent">Agent</option>
+                  </select>
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="full-name">
+                    Full name
+                  </label>
+                  <input class="govuk-input" id="fullname1" name="full-name" type="text" autocomplete="full-name">
+                  
+
+                  <br>                  <br>
+
+                  
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="full-name">Contact priority</label>
+                    <select class="govuk-select" id="contactpriority" name="landowneroptions">
+                      <option value=""></option>
+                      <option value="Primary">Primary</option>
+                      <option value="Secondary">Secondary</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  
+                  
+                  
+                  
+            
+                </div>
+
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="company-full-name">
+                      Company full name (optional)
+                    </label>
+                    <input class="govuk-input" id="companyfullname1" name="company-full-name" type="text" autocomplete="company-full-name">
+                  </div>
+
+
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-1">
+                          Address line 1
+                        </label>
+                        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-2">
+                          Address line 2 (optional)
+                        </label>
+                        <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town">
+                          Town or city
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-county">
+                          County (optional)
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-postcode">
+                          Postcode
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="postcode1" name="address-postcode" type="text" autocomplete="postal-code">
+                      </div>
+                    </fieldset>
+              </div>
+              <div class="govuk-form-group" style="display: flex; flex-direction: row;">
+                <div style="margin-right: 30px;">
+                  <label class="govuk-label" for="landline-number">
+                    Phone number 1 (optional)
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="phonenumberfirst1" name="landline-number" type="text" autocomplete="landline-number">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="l1">
+                      Primary or secondary number 
+                    </label>
+                    <select class="govuk-select" id="psnfirst1" name="l1">
+                      <option value=""></option>
+                      <option value="Primary">Primary</option>
+                      <option value="Secondary">Secondary</option>
+
+                    </select> 
+                  </div>
+                </div>
+               
+
+                <div class="govuk-form-group" style="display: flex; flex-direction: row;">
+                  <div style="margin-right: 30px;">
+                  <label class="govuk-label" for="mobile-number">
+                    Phone number 2 (optional)
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="phonenumbersecond1" name="mobile-number" type="text" autocomplete="mobile-number"><br> <br> <a href="#" class="govuk-link govuk-link--no-visited-state">Add another phone number</a>
+
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="m1">
+                      Primary or secondary number 
+                    </label>
+                    <select class="govuk-select" id="psnsecond1" name="m1" ">
+                      <option value=""></option>
+                      <option value="Primary">Primary</option>
+                      <option value="Secondary">Secondary</option>
+                    </select> <a href="#" class="govuk-link govuk-link--no-visited-state">Delete</a>                  
+                  </div>
+                </div>
+
+               
+<BR>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="email-address">
+                    Email (optional)
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="emailaddress1" name="email-address" type="text" autocomplete="email-address"> <br> <br>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Add another email</a>
+                </div>
+
+                <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="notes">
+                      Notes (optional)
+                    </label>
+                    <textarea class="govuk-textarea govuk-js-character-count" id="notes1" name="notes" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+                  </div>
+                  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                    You can enter up to 200 characters
+                  </div>
+                </div>
+
+              </fieldset>
+              <button onclick="newLandownerDetails()"  class="govuk-button" data-module="govuk-button">
+                Confirm and Save </button>
+                <button onclick="addAnotherContact()" style="margin-right:20px" class="govuk-button" data-module="govuk-button" >
+                  Add another contact </button>
+               
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  <script>
+    let landownerItems = [];
+    function addAnotherContact() {
+        let contacttype = document.getElementById('contacttype1').value;
+        let fullname    = document.getElementById('fullname1').value;
+        let primarycontact = document.getElementById('contactpriority').value;
+        let companyfullname = document.getElementById('companyfullname1').value;
+        let postcode = document.getElementById('postcode1').value;
+        let phonenumberfirst = document.getElementById('phonenumberfirst1').value;
+        let psnfirst = document.getElementById('psnfirst1').value;
+        let phonenumbersecond = document.getElementById('phonenumbersecond1').value;
+        let psnsecond = document.getElementById('psnsecond1').value;
+        let emailaddress = document.getElementById('emailaddress1').value;
+        let notes = document.getElementById('notes1').value;
+
+        landownerItems.push({
+          'contacttype':contacttype,
+          'fullname': fullname,
+          'primarycontact':primarycontact,
+          'companyfullname':companyfullname,
+          'postcode':postcode,
+          'phonenumberfirst':phonenumberfirst,
+          'psnfirst':psnfirst,
+          'phonenumbersecond':phonenumbersecond,
+          'psnsecond':psnsecond,
+          'emailaddress':emailaddress,
+          'notes':notes
+
+      })
+      localStorage.setItem('landownerobject', JSON.stringify(landownerItems));
+
+      setTimeout(function(){
+      document.getElementById('contacttype1').value ="";
+      document.getElementById('fullname1').value ="";
+      document.getElementById('contactpriority').value="";
+      document.getElementById('companyfullname1').value ="";
+      document.getElementById('postcode1').value ="";
+      document.getElementById('phonenumberfirst1').value ="";
+      document.getElementById('psnfirst1').value ="";
+      document.getElementById('phonenumbersecond1').value ="";
+      document.getElementById('psnsecond1').value ="";
+      document.getElementById('emailaddress1').value ="";
+      document.getElementById('notes1').value ="";
+
+      },500)
+
+    }
+    function newLandownerDetails() {
+      let contacttype = document.getElementById('contacttype1').value;
+        let fullname    = document.getElementById('fullname1').value;
+        let primarycontact = document.getElementById('contactpriority').value;
+        let companyfullname = document.getElementById('companyfullname1').value;
+        let postcode = document.getElementById('postcode1').value;
+        let phonenumberfirst = document.getElementById('phonenumberfirst1').value;
+        let psnfirst = document.getElementById('psnfirst1').value;
+        let phonenumbersecond = document.getElementById('phonenumbersecond1').value;
+        let psnsecond = document.getElementById('psnsecond1').value;
+        let emailaddress = document.getElementById('emailaddress1').value;
+        let notes = document.getElementById('notes1').value;
+
+        landownerItems.push({
+          'contacttype':contacttype,
+          'fullname': fullname,
+          'primarycontact':primarycontact,
+          'companyfullname':companyfullname,
+          'postcode':postcode,
+          'phonenumberfirst':phonenumberfirst,
+          'psnfirst':psnfirst,
+          'phonenumbersecond':phonenumbersecond,
+          'psnsecond':psnsecond,
+          'emailaddress':emailaddress,
+          'notes':notes
+
+      })
+      localStorage.setItem('landownerobject', JSON.stringify(landownerItems));
+      const urlParams = new URLSearchParams(window.location.search);
+  const tag = urlParams.get('tag');
+      if(tag){
+        window.location.href = "/sprint19/internal/new-landowner-details?tag="+tag;
+      } else {
+        window.location.href = "/sprint19/internal/new-landowner-details"
+      }
+      
+    }
+    
+
+  //console.info('status', tag)
+  </script>
+
+{% endblock %}

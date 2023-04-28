@@ -1,0 +1,231 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="#" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-m">Landowner</span>
+        Sarah Philips
+      </h1>
+      
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#personal-details">
+              Personal details
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#land-parcel-details">
+              Land parcel details
+            </a>
+          </li>         
+        </ul>
+        <div class="govuk-tabs__panel" id="personal-details">
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Contact details</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="govuk-caption-s">Updated on: 11 December 2022</span></td>
+                <td scope="col" class="govuk-table__header govuk-table__header--numeric"><a href="landowner-editdetails.html" class="govuk-link">Edit</a></td>
+              </tr>
+            </thead>
+          </table>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contact type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Landowner
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Landowner name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Sarah Philips<br> <strong class="govuk-tag">
+                  PRIMARY CONTACT	
+                </strong>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Landline
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19">02020 894852</p> <strong class="govuk-tag govuk-tag--yellow">
+                  SECONDARY CONTACT NUMBER	
+                </strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Mobile
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19">07700 900457</p> <strong class="govuk-tag govuk-tag--yellow">
+                  Primary CONTACT NUMBER	
+                </strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19" id="emailaddress">None</p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes	
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19">None</p>
+              </dd>
+            </div>
+          </dl>
+      
+        </div>
+       
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="land-parcel-details">
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Land parcel details</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="govuk-caption-s">Total land parcel: 2</span></td>
+                <td scope="col" class="govuk-table__cell govuk-table__header--numeric"><a href="#" class="govuk-link">Add land parcel</a></td>
+              </tr>
+            </thead>
+          </table>
+
+          <table class="govuk-table">
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Land Registry code</th>
+                <th scope="col" class="govuk-table__header">Permission status</th>
+                <th scope="col" class="govuk-table__header">View</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" class="govuk-caption-m" >AP1 234 432</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag">permission to visit
+                </strong></td>
+                <td class="govuk-table__cell"><a href="parcel-details2.html">Details</a></td>
+              </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" class="govuk-caption-m">TK1 436 076</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">never been surveyed</strong></td>
+                <td class="govuk-table__cell"><a href="#">Details</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>        
+      
+        </div>
+    </div>    
+    
+    <div class="govuk-grid-column-one-third govuk-!-static-margin-top-9">
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-one-third">
+      
+            <h2 class="govuk-heading-m">Change history</h2>
+            <ol class="dwp-timeline">
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Site visit condition added</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-visually-hidden visually-hidden">Site Visit ID: EA3456T7F</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Mall Johnson (EES)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">23 October 2022 at 13:02</span>
+                </p>
+                <p class="dwp-timeline__body">
+                  Site Visit ID: EA3456T7F.
+                </p>
+              </li>
+      
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Visit request letter sent</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Gene Presley (LE)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">27 July 2022 at 13:21</span>
+                </p>
+              </li>
+
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Site visit created</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Gene Presley (LE)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">27 July 2022 at 13:21</span>
+                </p>
+              </li>
+
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Personal details updated</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Maria Hunter (EA)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">27 July 2022 at 13:21</span>
+                </p>
+              </li>
+
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Contact details added</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Maria Hunter (EA)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">27 July 2022 at 13:21</span>
+                </p>
+              </li>
+              
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title"><a href="#">View all history</a></h3>
+              </li>
+
+            </ol>
+      
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<script>
+   let emailid = localStorage.getItem("landowneremail");
+  if(emailid != 'test' && emailid) {
+    document.getElementById('emailaddress').innerHTML = emailid;
+    
+  }
+</script>
+
+{% endblock %}

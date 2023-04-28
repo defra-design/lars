@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+<div class="govuk-header__container1"></div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+       Land Access Request service
+       <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+      </h1>{{releaseVersion | log }}
+           
+      <p class="govuk-body">You can use the Land Access Request service(LARs) to view, Manage and request permission to access land from landowners, Managers and tenants around England. </p>
+      <p class="govuk-body"><h3 class="govuk-heading-m">You Can use the Service to:</h3>
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Find out who oens and runs a piece of land
+        </li>
+        <li>
+          Create land access request letters and emails
+        </li>
+        <li>
+          View communications with landowners
+        </li>
+        <li>
+          Co-ordinate various survey visits across government bodies
+        </li>
+        <li>
+          Share information with other interested parties
+        </li>
+        <li>
+          Report or request landowner data
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

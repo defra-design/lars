@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+  {% endblock %}
+{% block content %}
+
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="landowner-editdetails.html" class="govuk-back-link">Back</a>              
+    <h1 class="govuk-heading-xl">
+      Change the email address 
+    </h1>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="text-1">
+        Enter the new email address
+      </label>
+      <input class="govuk-input"  id="text-1" name="full-name" type="text" spellcheck="false" autocomplete="name">
+    </div>
+
+    <button class="govuk-button" onclick="landParcelDetails()">
+      Save
+    </button>
+  
+    <!--
+    <button class="govuk-button govuk-button--warning" onclick="canceltext()" data-module="govuk-button">
+      Cancel
+    </button> -->
+  
+  </div>
+  
+</div>  
+</div>
+<script>
+  if(localStorage.getItem("landowneremail") == 'test') {
+    document.getElementById('text-1').value = '';
+  } else {
+    document.getElementById('text-1').value = localStorage.getItem("landowneremail");
+  }
+  function landParcelDetails () {
+    let text;
+    if(document.getElementById('text-1').value) {
+      text = document.getElementById('text-1').value;
+    } else {
+      text = 'test';
+    }
+    localStorage.setItem("landowneremail", text);
+    localStorage.setItem('landowneremailbanner', 'yes');
+    window.location.href = "/sprint11/internal/landowner-editdetails"
+  }
+//   function canceltext() {
+//   window.location.href = "/sprint11/internal/add-land-owner"
+// }
+</script>
+  
+
+{% endblock %}

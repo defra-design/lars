@@ -1,0 +1,162 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="parcel-details2.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-heading-xl">Who do you want to send the site permission request to for the land registry AGL077542</h1>
+                      <span class="govuk-caption-xl">Select all of the contacts you want to send the request to.</span>
+                    </legend>
+                   <br>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="c1" onclick="optionsLandowner()" name="where-do-you-live" type="radio" value="Conatactdetails1">
+                        <label class="govuk-label govuk-radios__label" for="c1">
+                          <span class="govuk-!-font-weight-bold" id="contacttype">Landowner</span><br>
+                          <span id="name">Sarah Philips</span><br>
+                          <span class="govuk-tag" id="primary">PRIMARY CONTACT</span>
+                        </label>
+                        <div class="govuk-inset-text" id="options1" style="display: none;">
+                          <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="p1" name="p1" type="radio" value="address1" onclick="address1('address1')">
+                              <label class="govuk-label govuk-radios__label" for="p1">
+                                <span class="govuk-!-font-weight-bold">Address</span><br>
+                                
+                                <span id="landmanager">72 Guild Street<br>London<br>SE23 6FH</span>
+                               
+                                
+                              </label>
+                            </div>
+                          <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="p2"  name="p1" type="radio" value="email1" onclick="address1('email1')">
+      
+                              <label class="govuk-label govuk-radios__label" for="p2">
+                                <span class="govuk-!-font-weight-bold">Email</span><br>
+      
+                                <span id="email">	
+                                  sarah.phillips@example.com</span>
+                              </label>
+                            </div>
+                        </div>
+                      </div> 
+                    </div>
+
+                    
+                  </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="c2" onclick="optionsLandowner1()" name="where-do-you-live" type="radio" value="Conatactdetails2">
+                        <label class="govuk-label govuk-radios__label" for="c2">
+                          <span class="govuk-!-font-weight-bold" id="contacttype1">Land manager</span><br>
+                          <span id="name1">Joyce Meyer
+                          </span><br>
+                          <span class="govuk-tag govuk-tag--grey" id="primary1">SECONDARY CONTACT
+                          </span>
+                        </label>
+                        <div class="govuk-inset-text" id="options2" style="display: none;">
+                          <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="s1" name="s1" type="radio" value="address2" onclick="address2('address2')"  >
+                              <label class="govuk-label govuk-radios__label" for="s1">
+                                <span class="govuk-!-font-weight-bold">Address</span><br>
+                                
+                                <span id="landmanager">241 City Road<br>London<br>EC1V 1JQ</span>
+                               
+                                
+                              </label>	
+                              
+                              
+                            </div>
+                          <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="s2"  name="s1" type="radio" value="email2" onclick="address2('email2')">
+      
+                              <label class="govuk-label govuk-radios__label" for="s2">
+                                <span class="govuk-!-font-weight-bold">Email</span><br>
+      
+                                <span id="email">	
+                                  joyce@meyer.co.uk</span>
+                              </label>
+                            </div>
+                        </div>
+                      </div> 
+                    </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="edit-template1.html" class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  
+  <script>
+    let optionslandowner = localStorage.getItem('contacttype');
+    
+    
+    if(optionslandowner == 'Conatactdetails1') {
+     // document.getElementById('c1').checked = true;
+    } else if(optionslandowner == 'Conatactdetails2') {
+      //document.getElementById('c2').checked = true;
+    }
+    
+    function optionsLandowner() {
+      let landownername =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      localStorage.setItem("contacttype", landownername);
+            
+      if(landownername == 'Conatactdetails1') { 
+        localStorage.setItem("landmanageremailaddress", "joyce@meyer.co.uk");
+      } else if(landownername == 'Conatactdetails2') {
+        localStorage.setItem("landowneremailaddress", "camila.anderson@gmail.com");
+      }
+      
+      document.getElementById('options1').style.display='block';
+      document.getElementById('options2').style.display='none';
+      document.getElementById("s1").checked=false;
+      document.getElementById("s2").checked=false;
+     
+    }
+    function optionsLandowner1() {
+      document.getElementById('options2').style.display='block';
+      document.getElementById('options1').style.display='none';
+      document.getElementById("p1").checked=false;
+      document.getElementById("p2").checked=false;
+    }
+
+    function address1(data) {
+      localStorage.setItem("address1", data);
+    }
+    
+    function address2(data) {
+      localStorage.setItem("address2", data);
+    }
+    
+  </script>
+
+{% endblock %}

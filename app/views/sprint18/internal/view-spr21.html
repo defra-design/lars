@@ -1,0 +1,205 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="parcel-details2.html" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-xl">Site permission request details 
+      
+        <span class="govuk-caption-l">You can check the status of this site permission request.</span>
+      </h1>
+        <!--
+        <span class="govuk-caption-m" id="n-landowner"></span>
+        <span id="n-name"></span> -->
+      <dl class="govuk-summary-list">
+  
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Permission reference number</th>
+              <td class="govuk-table__cell">EES-AGL077542-19122021
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Land Registry code</th>
+              <td class="govuk-table__cell">AGL077542</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Permission status</th>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+                EXPIRED
+              </strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Letter used</th>
+              <td class="govuk-table__cell">LARS-initial introduction-1</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Request sent by
+              </th>
+              <td class="govuk-table__cell">Email</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Created by</th>
+              <td class="govuk-table__cell">Maria Matt</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Creation date</th>
+              <td class="govuk-table__cell">19 December 2021</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Requested by</th>
+              <td class="govuk-table__cell">EES</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <p class="govuk-body govuk-!-font-size-19"><a href="parcel-details21.html">View land parcel details</a></p>
+        <br>
+<!--
+        <div class="govuk-form-group">
+          <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+              Add site permission conditions
+            </label>
+          </h3>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <button class="govuk-button" data-module="govuk-button">
+            Save condition
+          </button>
+        </div>
+-->
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Site permission conditions</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Permission notes</th>
+              <th scope="col" class="govuk-table__header">Created by</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">Do not visit site before 11am</td>
+              <td class="govuk-table__cell">Maria Matt (EES) <BR> 03 November 2022</td>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">Beware of dogs</td>
+              <td class="govuk-table__cell">Maria Matt (EES) <BR> 16 November 2022</td>
+              </tr>
+          </tbody>
+        </table>
+
+    </div>
+  </div>
+  <script>
+    //  let emailid = localStorage.getItem("landowneremail");
+    // if(emailid != 'test') {
+    //   document.getElementById('emailaddress').innerHTML = emailid;
+      
+    // }
+    //Contact details page 1
+    let optionslandowner = localStorage.getItem('asscontactname1');
+    let fullname = localStorage.getItem('fullname1');
+    let landlinenumber = localStorage.getItem('landlinenumber1');
+    let mobilenumber = localStorage.getItem('mobilenumber1');
+    let emailaddress = localStorage.getItem('emailaddress1');
+    let fullname1 = localStorage.getItem('fullname');
+    let notes1 = localStorage.getItem('notes1');
+    let companyname1 = localStorage.getItem('companyname1');
+
+    // let optionslandowner1 = localStorage.getItem('optionslandowner1');
+    // if(optionslandowner1 == 'Individual') {
+    //   document.getElementById('n-landowner1').innerHTML = 'Landowner';
+    // } else if(optionslandowner1 == 'Associated contact') { 
+    //   document.getElementById('n-landowner1').innerHTML = localStorage.getItem('asscontactname1');
+    // } else {
+    //   document.getElementById('n-landowner1').innerHTML = 'Business';
+    // }
+
+   
+  if(optionslandowner) {
+    document.getElementById('c-individual').innerHTML = optionslandowner;
+    document.getElementById('c-lname').innerHTML = optionslandowner;
+    document.getElementById('n-landowner1').innerHTML = optionslandowner;
+  } 
+
+  //   if(fullname1) {
+  //   //document.getElementById('c-name1').innerHTML = fullname1;
+  //   document.getElementById('n-name').innerHTML = fullname1;
+  // } else {
+  //  // document.getElementById('c-name1').innerHTML = '';
+  //   document.getElementById('n-name').innerHTML = '';
+  // }
+
+
+    // if(optionslandowner == 'Individual') { console.info('optionslandowner...........1');
+    //   document.getElementById('c-individual').innerHTML = 'Individual';
+    //   document.getElementById('c-lname').innerHTML = 'Landowner';
+    // } else if(optionslandowner == 'Associated contact') { console.info('optionslandowner...........2');
+    //   document.getElementById('c-individual').innerHTML = localStorage.getItem('asscontactname1');
+    //   document.getElementById('c-lname').innerHTML = localStorage.getItem('asscontactname1');
+    // } else { console.info('optionslandowner...........3');
+    //   document.getElementById('c-individual').innerHTML = 'Business';
+    //   document.getElementById('c-lname').innerHTML = 'Business';
+    // }
+    if(fullname) {
+      document.getElementById('c-name').innerHTML = fullname;
+    } else {
+      document.getElementById('c-name').innerHTML = '';
+    }
+  
+    if(landlinenumber) {
+      document.getElementById('c-landline').innerHTML = landlinenumber;
+    } else {
+      document.getElementById('c-landline').innerHTML = 'None';
+    }
+    if(mobilenumber) {
+      document.getElementById('c-mobile').innerHTML = mobilenumber;
+    } else {
+      document.getElementById('c-mobile').innerHTML = 'None';
+    }
+    if(emailaddress) {
+      document.getElementById('c-emailaddress').innerHTML = emailaddress;
+    } else {
+      document.getElementById('c-emailaddress').innerHTML = 'None';
+    }
+    if(companyname1) {
+      document.getElementById('c-companyname').innerHTML = companyname1;
+    } else {
+      document.getElementById('c-companyname').innerHTML = 'None';
+    }
+    if(localStorage.getItem('primarycontactbox') == 'true') {
+      document.getElementById("primary1").classList.remove("govuk-tag--grey");
+      document.getElementById('primary1').innerHTML = 'PRIMARY CONTACT';
+    } else {
+      document.getElementById('primary1').innerHTML = 'SECONDARY CONTACT';
+    }
+    if(localStorage.getItem('contact1landlinetype1') == 'Primary') {  
+      document.getElementById("c1landlineprimary").classList.remove("govuk-tag--green");
+      document.getElementById('c1landlineprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+    } else {
+      document.getElementById('c1landlineprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+    }
+  
+    if(localStorage.getItem('contact1mobiletype1') == 'Primary') {  
+      document.getElementById("c1mobileprimary").classList.remove("govuk-tag--green");
+      document.getElementById('c1mobileprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+    } else {
+      document.getElementById('c1mobileprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+    }
+    if(notes1) {
+    document.getElementById('c-notes1').innerHTML = notes1;
+  } else {
+    document.getElementById('c-notes1').innerHTML = 'None';
+  }
+  </script>
+
+
+{% endblock %}

@@ -1,0 +1,265 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+  <!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+
+      <a href="#" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-xl">Site permission request dashboard EES
+        <span class="govuk-caption-l">&nbsp;</span>
+        <BR>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="timeperiod">
+              <b>Time period</b>
+            </label>
+            <select class="govuk-select" id="timeperiod" name="timeperiod">
+              <option value="Phone">Last 28 days</option>
+              <option value="Letter">Last 7 days</option>
+
+            </select>
+          </div>
+          </fieldset>
+          </div>
+     
+
+
+    </div>
+  </div> -->
+
+  <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="dashboard.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-heading-xl">Create multiple site permission requests</h1>                      
+                    </legend>                
+                    
+                    <table class="govuk-table">
+                      <thead class="govuk-table__head"> <p>Showing 20 of 68 Land parcel</p>
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Land parcel ID</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Primary contact</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Land parcel address</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__cell--numeric"><button class="govuk-button" data-module="govuk-button">
+                            Add Land parcel
+                          </button></th>
+                        </tr>
+                      </thead>
+                      
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AGL077542</a></td>
+                          <td class="govuk-table__cell">Alan Harmonie</td>
+                          <td class="govuk-table__cell">241 City Road, London EC1V 1JQ</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">ASE892754</a></td>
+                          <td class="govuk-table__cell">Maisy Digby</td>
+                          <td class="govuk-table__cell">A505 Baldock Rd, Royston, SG8 9NT</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AMA757420</a></td>
+                          <td class="govuk-table__cell">Camilla Milford</td>
+                          <td class="govuk-table__cell">7 Angel Row, Nottingham NG1 6HL</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">LAG077542</a></td>
+                          <td class="govuk-table__cell">Roderick Olly</td>
+                          <td class="govuk-table__cell">31 Holbeach Rd, Spalding PE12 6JP</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">SEA892754</a></td>
+                          <td class="govuk-table__cell">Kassia Irwin</td>
+                          <td class="govuk-table__cell">31/35 Clumber St, Nottingham NG1 3ED</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">MAA757420</a></td>
+                          <td class="govuk-table__cell">Nannie Peers</td>
+                          <td class="govuk-table__cell">9 Rose Cres, Cambridge CB2 3LL</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">GAL077542</a></td>
+                          <td class="govuk-table__cell">Alphonso Tod</td>
+                          <td class="govuk-table__cell">1, Johnstonebridge, Lockerbie DG11 1HD</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">EAS892754</a></td>
+                          <td class="govuk-table__cell">Rigby Callan</td>
+                          <td class="govuk-table__cell">137, 138 Princes St, Edinburgh EH2 4BL</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AAM757420</a></td>
+                          <td class="govuk-table__cell">Marisa Suellen</td>
+                          <td class="govuk-table__cell">241 City Rd, London EC1V 1JQ</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+<!--
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AGL077542</a></td>
+                          <td class="govuk-table__cell">Sloan Averie</td>
+                          <td class="govuk-table__cell">72 Guild Street London SE23 6FH</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AES892754</a></td>
+                          <td class="govuk-table__cell">Lydia Kristen</td>
+                          <td class="govuk-table__cell">4 Duncannon St, London WC2N 4JF</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">RMA757420</a></td>
+                          <td class="govuk-table__cell">Mable Brittney</td>
+                          <td class="govuk-table__cell">109-125 Knightsbridge, London SW1X 7RJ</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AGL077542</a></td>
+                          <td class="govuk-table__cell">Alyx Harmonie</td>
+                          <td class="govuk-table__cell">62-65 Trafalgar Sq, St. James's, London WC2N 5DS</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">ASE892754</a></td>
+                          <td class="govuk-table__cell">Lawrie Ian</td>
+                          <td class="govuk-table__cell">17-21 Leicester Square, London WC2H 7LE</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AMA757420</a></td>
+                          <td class="govuk-table__cell">Keara Yale</td>
+                          <td class="govuk-table__cell">71 Tottenham Ct Rd, London W1T 2HD</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AGL077542</a></td>
+                          <td class="govuk-table__cell">Lucinda Sophie</td>
+                          <td class="govuk-table__cell">3 Mepham St, London SE1 8FS</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">ASE892754</a></td>
+                          <td class="govuk-table__cell">Chrystal Charlie</td>
+                          <td class="govuk-table__cell">43 Charing Cross Rd, London WC2H 0AP</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AMA757420</a></td>
+                          <td class="govuk-table__cell">Darrin Jaylee</td>
+                          <td class="govuk-table__cell">25/27 Shaftesbury Ave, London W1D 7EQ</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">ASE892754</a></td>
+                          <td class="govuk-table__cell">Shantel Dex</td>
+                          <td class="govuk-table__cell">34/35 Strand, London WC2N 5HY</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell"><a href="#">AMA757420</a></td>
+                          <td class="govuk-table__cell">Ward Cindi</td>
+                          <td class="govuk-table__cell">48 Leicester Square, London WC2H 7LU</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove from the list</a></td>
+                        </tr>
+-->
+                      </tbody>
+                    </table>
+                    
+
+                    
+                    <nav class="govuk-pagination" role="navigation" aria-label="results">
+                      <div class="govuk-pagination__prev">
+                        <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                          </svg>
+                          <span class="govuk-pagination__link-title">Previous</span></a>
+                      </div>
+                      <ul class="govuk-pagination__list">
+
+                        <li class="govuk-pagination__item govuk-pagination__item--current">
+                          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                            1
+                          </a>
+                        </li>
+
+                        <li class="govuk-pagination__item">
+                          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                            2
+                          </a>
+                        </li>
+                        
+                        <li class="govuk-pagination__item">
+                          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                            3
+                          </a>
+                        </li>
+                      </ul>
+                      <div class="govuk-pagination__next">
+                        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                          </svg></a>
+                      </div>
+                    </nav>  
+                    
+                    <div class="govuk-button-group">
+                      <button class="govuk-button" data-module="govuk-button">
+                        Create Sites for  Permission Requests
+                      </button>
+                      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Save the batch list
+                      </button>
+                    </div>
+
+                    
+                    </div>
+                  </fieldset>
+                </div>
+            </div>
+          </div>
+        </main>
+      </div>
+  
+
+{% endblock %}

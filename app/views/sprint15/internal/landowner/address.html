@@ -1,0 +1,86 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+  {% endblock %}
+{% block content %}
+
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Add Landowner
+    </h1>
+    
+    <div class="govuk-form-group">
+      <a href="#" class="govuk-back-link">Back</a>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What is landowner address?
+          </h1>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="text-1">
+            Address line 1
+          </label>
+          <input class="govuk-input" id="text-1" name="address-line-1" type="text" autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Address line 2 (optional)
+          </label>
+          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+        </div>
+      </fieldset>
+    </div>
+
+    <button class="govuk-button" onclick="landParcelDetails()">
+      Save
+    </button>
+  
+    <button class="govuk-button govuk-button--warning" onclick="canceltext()" data-module="govuk-button">
+      Cancel
+    </button>
+  
+  </div>
+  
+</div>  
+</div>
+<script>
+  if(localStorage.getItem("addresstext") == 'test') {
+    document.getElementById('text-1').value = '';
+  } else {
+    document.getElementById('text-1').value = localStorage.getItem("addresstext");
+  }
+  function landParcelDetails () {
+    let text;
+    if(document.getElementById('text-1').value) {
+      text = document.getElementById('text-1').value;
+    } else {
+      text = 'test';
+    }
+    localStorage.setItem("addresstext", text);
+    window.location.href = "/sprint11/internal/add-land-owner"
+  }
+  function canceltext() {
+  window.location.href = "/sprint11/internal/add-land-owner"
+}
+</script>
+  
+
+{% endblock %}

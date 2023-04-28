@@ -1,0 +1,87 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+
+
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+              <div class="govuk-grid-row">
+                <a href="parcel-details2.html" class="govuk-back-link">Back</a>              
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-heading-xl">Who do you want to send the site permission request to for the land registry AGL077542</h1>
+                      <span class="govuk-caption-xl">Select all of the contacts you want to send the request to</span>
+
+                    
+                    </legend> <br>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="c1" onclick="optionsLandowner()" name="where-do-you-live" type="checkbox" value="Conatactdetails1">
+                        <label class="govuk-label govuk-checkboxes__label" for="c1">
+                          <span class="govuk-!-font-weight-bold" id="contacttype">Landowner</span><br>
+                          <span id="name">Sarah Philips</span><br>
+                          <span class="govuk-tag" id="primary">PRIMARY CONTACT</span>
+                        </label>
+                      </div> <br>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="c2" onclick="optionsLandowner()" name="where-do-you-live" type="checkbox" value="Conatactdetails2">
+                        <label class="govuk-label govuk-checkboxes__label" for="c2">
+                          <span class="govuk-!-font-weight-bold" id="contacttype1">Land manager</span><br>
+                          <span id="name1">Joyce Meyer
+                          </span><br>
+                          <span class="govuk-tag govuk-tag--grey" id="primary1">SECONDARY CONTACT
+                          </span>
+                        </label>
+                      </div>
+                      
+                      
+                    </div>
+                  </fieldset>
+                </div>
+              
+                <a  href="select-communication-type.html"  class="govuk-button" data-module="govuk-button">
+                  Continue </a>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+  </div>
+  </div>
+  
+  <!-- <script>
+    let optionslandowner = localStorage.getItem('contacttype');
+    
+    
+    if(optionslandowner == 'Conatactdetails1') {
+      document.getElementById('c1').checked = true;
+    } else if(optionslandowner == 'Conatactdetails2') {
+      document.getElementById('c2').checked = true;
+    }
+    
+    function optionsLandowner() {
+      let landownername =  document.querySelector('input[name="where-do-you-live"]:checked').value;
+      localStorage.setItem("contacttype", landownername);
+            
+      if(landownername == 'Conatactdetails1') { 
+        localStorage.setItem("landmanageremailaddress", "joyce@meyer.co.uk");
+      } else if(landownername == 'Conatactdetails2') {
+        localStorage.setItem("landowneremailaddress", "camila.anderson@gmail.com");
+      }
+      
+     
+    }
+  </script> -->
+
+{% endblock %}

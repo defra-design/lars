@@ -1,0 +1,356 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Land Access Request Service
+{% endblock %}
+{% block content %}
+{% include 'includes/head.html' %}
+<div class="govuk-header__container1"></div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Land parcel details updated successfully
+      </h1>
+      <div class="govuk-panel__body">
+        Landowner and tenants added to land parcel ST1234567
+      </div>
+    </div></div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <a href="new-landowner-details.html" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-m" id="n-landowner">Landowner</span>
+        <span id="n-name">Sarah Philips</span>
+      </h1>
+      
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#personal-details">
+              Personal details
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#land-parcel-details">
+              Land parcel details
+            </a>
+          </li>         
+        </ul>
+        <div class="govuk-tabs__panel" id="personal-details">
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Contact details</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="govuk-caption-s">Last updated on: 14 December 2022</span></td>
+                <td scope="col" class="govuk-table__header govuk-table__header--numeric"><a href="landowner-editdetails.html" class="govuk-link">Edit</a></td>
+              </tr>
+            </thead>
+          </table>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contact type
+              </dt>
+              <dd class="govuk-summary-list__value" id="c-individual1">
+                Tenant
+              </dd><p class="govuk-tag govuk-tag--grey" id="primary2" style="font-size: 12px;">
+                primary contact
+              </p>
+             
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <span id="c-lname1">Landowner</span> full name
+              </dt>
+              <dd class="govuk-summary-list__value" id="c-name1">
+                Sarah Philips
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Company full name
+              </dt>
+              <dd class="govuk-summary-list__value" id="c-companyname1">
+                 Philips
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 Princes Street<br>Edinburgh<br>EH1 3DJ
+              </dd>
+            </div>
+            <!-- <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contact details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body" id="c-landline1">07700 900457</p>
+                <p class="govuk-body govuk-!-font-size-19" id="c-mobile1">02020 894852</p>
+              </dd>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-tag govuk-tag--yellow" id="c2landlineprimary" style="font-size: 12px;">07700 900457</p>
+                <p class="govuk-body govuk-tag govuk-tag--yellow" id="c2mobileprimary" style="font-size: 12px;">02020 894852</p>
+              </dd>
+              
+            </div> -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Landline
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19" id="c-landline1">None</p>
+              </dd>
+              <p class="govuk-body govuk-tag govuk-tag--yellow" id="c2landlineprimary" style="font-size: 12px;">07700 900457</p>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Mobile
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19" id="c-mobile1">None</p>
+              </dd> <p class="govuk-body govuk-tag govuk-tag--yellow" id="c2mobileprimary" style="font-size: 12px;">02020 894852</p>
+
+            </div>
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19" id="c-emailaddress1">None</p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-size-19" id="c-notes">None</p>
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                
+              </dd> -->
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd> -->
+            </div>
+          </dl>
+      
+        </div>
+       
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="land-parcel-details">
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Land parcel details</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="govuk-caption-s">Total land parcel: 1</td>
+                <td scope="col" class="govuk-table__cell govuk-table__header--numeric"><a href="#" class="govuk-link">Add a land parcel</a></td>
+              </tr>
+            </thead>
+          </table>
+
+          <table class="govuk-table">
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Land Registry code</th>
+                <th scope="col" class="govuk-table__header">Permission status</th>
+                <th scope="col" class="govuk-table__header">View</th>
+              </tr>
+            </thead>
+            <!--
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" class="govuk-caption-m" >AP1 234 432</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag">permission to visit
+                </strong></td>
+                <td class="govuk-table__cell"><a href="#">Details</a></td>
+              </tr>
+            </tbody> -->
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" class="govuk-caption-m">ST1234567</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">never been surveyed</strong></td>
+                <td class="govuk-table__cell"><a href="parcel-details1.html">Details</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>        
+      
+        </div>
+    </div>    
+    
+    <div class="govuk-grid-column-one-third govuk-!-static-margin-top-9">
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-one-third">
+      
+            <h2 class="govuk-heading-m">Change history</h2>
+            <ol class="dwp-timeline">
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Tenant details created</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-visually-hidden visually-hidden">For ST1234567</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Mall Johnson (EES)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">12 December 2022 at 15:22</span>
+                </p>
+                <p class="dwp-timeline__body">
+                  LR Code: ST1234567.
+                </p>
+              </li>
+      
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Landowner details created</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Mall Johnson (EES)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">12 December 2022 at 15:22</span>
+                </p>
+              </li>
+<!--
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Site visit created</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Gene Presley (LE)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">27 July 2022 at 13:21</span>
+                </p>
+              </li>
+
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Personal details updated</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Maria Hunter (EA)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">27 July 2022 at 13:21</span>
+                </p>
+              </li>
+
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title">Contact details recorded</h3>
+                <p class="dwp-timeline__info">
+                  <span class="govuk-caption-m" class="dwp-timeline__author">by Maria Hunter (EA)</span>
+                  <span class="govuk-caption-m" class="dwp-timeline__date">27 July 2022 at 13:21</span>
+                </p>
+              </li>
+              
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s" class="dwp-timeline__title"><a href="#">View all history</a></h3>
+              </li>
+-->
+            </ol>
+      
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+<script>
+  //  let emailid = localStorage.getItem("landowneremail");
+  // if(emailid != 'test') {
+  //   document.getElementById('emailaddress').innerHTML = emailid;
+    
+  // }
+  //Contact details page 2
+  let optionslandowner1 = localStorage.getItem('asscontactname');
+  let fullname1 = localStorage.getItem('fullname');
+  let landlinenumber1 = localStorage.getItem('landlinenumber');
+  let mobilenumber1 = localStorage.getItem('mobilenumber');
+  let emailaddress1 = localStorage.getItem('emailaddress');
+  let notes = localStorage.getItem('notes');
+  let companyname1 = localStorage.getItem('companyname');
+
+  if(optionslandowner1) {
+    document.getElementById('c-individual1').innerHTML = optionslandowner1;
+    document.getElementById('c-lname1').innerHTML = optionslandowner1;
+    document.getElementById('n-landowner').innerHTML = optionslandowner1;
+  } 
+
+  // if(optionslandowner1 == 'Individual') {
+  //   document.getElementById('c-individual1').innerHTML = 'Individual';
+  //   document.getElementById('c-lname1').innerHTML = 'Landowner';
+  //   document.getElementById('n-landowner').innerHTML = 'Landowner';
+  // } else if(optionslandowner1 == 'Associated contact') { 
+    
+  //   document.getElementById('c-individual1').innerHTML = localStorage.getItem('asscontactname');
+  //   document.getElementById('c-lname1').innerHTML = localStorage.getItem('asscontactname');
+  //   document.getElementById('n-landowner').innerHTML = localStorage.getItem('asscontactname');
+  // } else {
+  //   document.getElementById('c-individual1').innerHTML = 'Business';
+  //   document.getElementById('c-lname1').innerHTML = 'Business';
+  //   document.getElementById('n-landowner').innerHTML = 'Business';
+  // }
+  if(fullname1) {
+    document.getElementById('c-name1').innerHTML = fullname1;
+    document.getElementById('n-name').innerHTML = fullname1;
+  } else {
+    document.getElementById('c-name1').innerHTML = '';
+    document.getElementById('n-name').innerHTML = '';
+  }
+
+  if(landlinenumber1) {
+    document.getElementById('c-landline1').innerHTML = landlinenumber1;
+  } else {
+    document.getElementById('c-landline1').innerHTML = 'None';
+  }
+  if(mobilenumber1) {
+    document.getElementById('c-mobile1').innerHTML = mobilenumber1;
+  } else {
+    document.getElementById('c-mobile1').innerHTML = 'None';
+  }
+  if(emailaddress1) {
+    document.getElementById('c-emailaddress1').innerHTML = emailaddress1;
+  } else {
+    document.getElementById('c-emailaddress1').innerHTML = 'None';
+  }
+  if(companyname1) {
+    document.getElementById('c-companyname1').innerHTML = companyname1;
+  } else {
+    document.getElementById('c-companyname1').innerHTML = 'None';
+  }
+  if(localStorage.getItem('primarycontactbox1') == 'true') {
+    document.getElementById("primary2").classList.remove("govuk-tag--grey");
+    document.getElementById('primary2').innerHTML = 'PRIMARY CONTACT';
+  } else {
+    document.getElementById('primary2').innerHTML = 'SECONDARY CONTACT';
+  }
+  if(localStorage.getItem('contact2landlinetype1') == 'Primary') {  
+    document.getElementById("c2landlineprimary").classList.remove("govuk-tag--green");
+    document.getElementById('c2landlineprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+  } else {
+    document.getElementById('c2landlineprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+  }
+
+  if(localStorage.getItem('contact2mobiletype1') == 'Primary') {  
+    document.getElementById("c2mobileprimary").classList.remove("govuk-tag--green");
+    document.getElementById('c2mobileprimary').innerHTML = 'PRIMARY CONTACT NUMBER'; 
+  } else {
+    document.getElementById('c2mobileprimary').innerHTML = 'SECONDARY CONTACT NUMBER';
+  }
+
+  if(notes) {
+    document.getElementById('c-notes').innerHTML = notes;
+  } else {
+    document.getElementById('c-notes').innerHTML = 'None';
+  }
+</script>
+
+{% endblock %}
